@@ -12,7 +12,7 @@ at [this Sparx Systems link](https://www.sparxsystems.com/bin/EALite.msi)
 ## What is MVP-VM?
  * [MVPVM Design Pattern for WPF](https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf)
 
- Lnks in above document:
+ Lnks in above document (some links in above article are broken):
  * [GUI Architectures](https://www.martinfowler.com/eaaDev/uiArchs.html)
  * [Twisting the Triad](http://www.object-arts.com/downloads/papers/TwistingTheTriad.PDF)
  * [Potel Paper](https://pdfs.semanticscholar.org/ee70/65c3970b4c27d9d4bfa57ab45ba545481232.pdf?_ga=2.133151502.1054465415.1579366097-297204280.1579366097)
