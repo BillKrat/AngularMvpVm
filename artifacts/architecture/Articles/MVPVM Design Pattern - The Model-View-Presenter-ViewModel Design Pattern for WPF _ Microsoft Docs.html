@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<!-- saved from url=(0147)https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf -->
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus js-focus-visible theme-light" lang="en-us" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@docsmsft">
+
+		<meta name="is_archived" content="true">
+<meta name="ROBOTS" content="INDEX,FOLLOW">
+<meta name="author" content="kexugit">
+<meta name="ms.author" content="Archiveddocs">
+<meta name="breadcrumb_path" content="/archive/msdn-magazine/breadcrumb/toc.json">
+<meta name="ms.topic" content="Archived">
+<meta name="ms.prod" content="msdn-magazine">
+<meta name="uhfHeaderId" content="MSDocsHeader-Archive">
+<meta name="ms:contentKeyID" content="39519554">
+<meta name="TOCTitle" content="MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF">
+<meta name="ms:assetid" content="78dda9e7-4e39-4598-8310-25463f93a12b">
+<meta name="ms:mtpsurl" content="https://msdn.microsoft.com/en-us/library/Hh580734(v=MSDN.10)">
+<meta name="ms.date" content="08/10/2015">
+<meta name="mtps_version" content="v=MSDN.10">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="search.ms_docsetname" content="msdn-magazine-archive">
+<meta name="locale" content="en-us">
+<meta name="site_name" content="Docs">
+<meta name="search.ms_product" content="MSDN">
+<meta name="depot_name" content="MSDN.msdn-magazine-archive">
+<meta name="updated_at" content="2019-11-04 08:19 AM">
+<meta name="gitcommit" content="https://docs-archive.visualstudio.com/DefaultCollection/docs-archive-project/_git/msdn-magazine-archive-pr/commit/cd9dc8c459ab025dd944dd2ae4c76fc90aacecae?path=%2fmsdn-magazine-archive%2f2011%2fdecember%2fmvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf.md&amp;_a=contents">
+<meta name="original_content_git_url" content="https://docs-archive.visualstudio.com/DefaultCollection/docs-archive-project/_git/msdn-magazine-archive-pr?path=%2fmsdn-magazine-archive%2f2011%2fdecember%2fmvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf.md&amp;version=GBlive&amp;_a=contents">
+<meta name="document_id" content="33965590-84fe-486f-56d1-ab2462ae1cde">
+<meta name="document_version_independent_id" content="562638f7-65d5-3279-9748-044fe0e2868e">
+<meta name="page_type" content="conceptual">
+<meta name="toc_rel" content="toc.json">
+<meta name="word_count" content="4282">
+
+<link href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf" rel="canonical">
+	<title>MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/181aec65.site-ltr.css">
+
+	<link rel="stylesheet" href="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/2488a4dd.conceptual.css">
+
+
+	<script async="" defer="" crossorigin="anonymous" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/lux.js.download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/analytics.js.download"></script><script>
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			azureHeaderLocale: 'en-us',
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasComments: false,
+			showFeedbackReport: false,
+			binaryRatingUpdate : false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			feedbackProductUrl: '',
+			contentGitUrl: 'https://docs-archive.visualstudio.com/DefaultCollection/docs-archive-project/_git/msdn-magazine-archive-pr?path=%2fmsdn-magazine-archive%2f2011%2fdecember%2fmvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf.md&version=GBlive&_a=contents',
+			extendBreadcrumb: true,
+		},
+		functions:{}
+	};
+	if (!('Promise' in window && 'resolve' in window.Promise && 'reject' in window.Promise && 'all' in window.Promise && 'race' in window.Promise)) {
+		document.write('<script src="https://static.docs.com/ui/third-party/bluebird/3.5.0/bluebird.min.js" integrity="sha384-aD4BDeDGeLXLpPK4yKeqtZQa9dv4a/7mQ+4L5vwshIYH1Mc2BrXvHd32iHzYCQy5" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof fetch !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/fetch/2.0.3/fetch.min.js" integrity="sha384-H3LQq82b6Mm80GYRHtRSlTwO9DoXctmYCVEYk9M8mp97lRzs6DuSrHVUg3SBP9w0" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof HTMLTemplateElement === 'undefined') {
+		document.write('<script src="https://static.docs.com/ui/third-party/template/1.4.0/template.min.js" integrity="sha384-1zKzI6ldTVHMU7n0W2HpE/lhHI+UG4D9IIaxbj3kT2UhCWicdTuJkTtnKuu0CQzN" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof URL !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/url/0.5.7/url.min.js" integrity="sha384-vn7xBMtpSTfzaTRWxj0kVq0UcsbBrTOgZ/M1ISHqe1V358elYva+lfiEC+T8jLPc" crossorigin="anonymous"><\/script>');
+	}
+	</script>
+
+	<script src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/jquery-3.3.1.min.js.download" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+		<script src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/f24de3ce.index-docs.js.download"></script><style></style><script src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/jsll-4.js.download" async="" defer=""></script>
+
+<script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js.download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(1).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(2).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(3).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(4).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(5).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(6).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(7).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(8).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(9).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(10).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(11).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(12).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(13).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(14).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(15).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(16).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(17).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(18).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(19).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(20).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(21).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(22).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(23).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(24).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(25).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(26).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(27).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(28).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(29).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(30).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(31).download"></script><script async="" src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/t.js(32).download"></script></head>
+
+<body lang="en-us" dir="ltr">
+<div class="header-holder has-default-focus">
+	<a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#main" class="skip-to-main-link visually-hidden-until-focused is-fixed has-inner-focus focus-visible has-top-zero has-left-zero has-right-zero has-padding-medium has-text-centered has-body-background-medium" tabindex="1">Skip to main content</a>
+		<div id="headerAreaHolder" data-bi-name="header"><!----><!----><header class="nav-bar" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization"><!---->
+		
+		
+		<a class="nav-bar-button" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft">
+			<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+		</a>
+		
+		<nav class="nav-bar-nav" role="navigation" aria-label="Global">
+			<ul class="nav-bar-nav-list">
+				
+		<li class="nav-bar-item is-category has-spacing">
+			<a class="nav-bar-button title has-hover-underline is-4" itemprop="url" href="https://docs.microsoft.com/">
+				<span><!---->Docs<!----></span>
+			</a>
+		</li>
+				<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button has-hover-underline" href="https://docs.microsoft.com/en-us/previous-versions">
+				<span><!---->Previous Versions Documentation<!----></span>
+			</a>
+		</li><!---->
+		<li class="dropdown nav-bar-item" hidden="">
+			<button aria-expanded="false" class="dropdown-trigger nav-bar-button has-hover-underline" aria-controls="ax-4">
+				<span><!---->More<!----></span>
+				<span class="nav-bar-button-chevron" aria-hidden="true">
+					<span class="docon docon-chevron-down-light expanded-indicator"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu" id="ax-4" aria-label="More">
+				<!---->
+		<li class="nav-bar-item" hidden="">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/previous-versions"><!---->Previous Versions Documentation<!----></a>
+		</li>
+	<!---->
+			</ul>
+		</li><!---->
+				
+			</ul>
+		</nav>
+		<span class="nav-bar-spacer"></span>
+		
+			<div class="nav-bar-item nav-bar-search-form-item" id="ax-5" hidden="">
+				
+			<form class="is-flex" method="GET" id="searchForm" name="searchForm" role="search" aria-label="Search" aria-expanded="false" action="https://docs.microsoft.com/en-us/search/">
+					
+					<div class="autocomplete" data-bi-name="autocomplete"><!---->
+		<div class="control ">
+			<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-search-input" class="autocomplete-input input   is-full-width" type="search" name="search" aria-expanded="false" aria-owns="ax-6-listbox" aria-activedescendant="" placeholder="Search previous versions">
+
+			<span class="icon is-small is-left" aria-hidden="true" hidden="">
+				<span class="has-text-primary docon docon-undefined"></span>
+			</span>
+
+			<span class="autocomplete-loader loader has-text-primary" aria-hidden="true" hidden=""></span>
+		</div>
+
+		<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-6-listbox" hidden="">
+			
+		</ul><!----></div>
+					<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+					<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+					<input name="category" hidden="" value="All">
+					
+					<input name="dataSource" hidden="" value="previousVersions">
+			</form>
+		
+			</div>
+			<div class="nav-bar-item ">
+				<button id="form-expander" class="nav-bar-button has-hover-underline has-margin-left-extra-small" title="Search" aria-expanded="false" aria-controls="ax-5">
+						
+					<span class="is-visually-hidden-mobile"><!---->Search<!----></span>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-search"></span>
+					</span>
+	
+				</button>
+			</div>
+		<!----><!----></header></div>
+		<div class="content-header uhf-container has-padding has-default-focus" data-bi-name="content-header">
+		<nav class="has-padding-none-mobile" data-bi-name="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Breadcrumb">
+			<ul id="page-breadcrumbs" class="breadcrumbs"><!---->
+		<!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/">
+				<span itemprop="name">
+					Docs
+				</span>
+			</a>
+			<meta itemprop="position" content="1">
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/archive/">
+				<span itemprop="name">
+					Archive
+				</span>
+			</a>
+			<meta itemprop="position" content="2">
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/msdn-magazine-issues">
+				<span itemprop="name">
+					MSDN Magazine Issues
+				</span>
+			</a>
+			<meta itemprop="position" content="3">
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/msdn-magazine-issues-from-2011">
+				<span itemprop="name">
+					2011
+				</span>
+			</a>
+			<meta itemprop="position" content="4">
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/msdn-magazine-december-2011">
+				<span itemprop="name">
+					December
+				</span>
+			</a>
+			<meta itemprop="position" content="5">
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<span itemprop="name">
+				MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF
+			</span>
+			<meta itemprop="position" content="6">
+		</li><!---->
+	<!----></ul>
+		</nav>
+		<div class="content-header-controls">
+			<button type="button" class="contents-button button" data-bi-name="contents-expand" aria-haspopup="true">
+				<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+				<span>Contents</span>
+			</button>
+		</div>
+		<div class="content-header-controls exit-focus">
+			<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse" aria-controls="action-panel">
+				<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+				<span>Exit focus mode</span>
+			</button>
+		</div>
+		<div class="is-size-7 is-flex-touch has-flex-justify-content-space-between-touch has-padding-none has-padding-none-mobile">
+			<ul class="action-list has-flex-justify-content-start-mobile is-flex is-flex-row has-flex-wrap is-unstyled">
+				<li>
+					<button type="button" class="bookmark button is-text has-inner-focus is-small is-icon-only-touch" data-list-type="bookmarks" data-bi-name="bookmark" title="Add bookmark for MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF | Microsoft Docs" aria-pressed="false">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-single-bookmark"></span>
+						</span>
+						<span class="bookmark-status is-visually-hidden-touch is-hidden-portrait">Bookmark</span>
+					</button>
+				</li>
+				<li>
+<div class="sharing dropdown has-caret">
+	<button class="dropdown-trigger button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small is-icon-only-touch" aria-controls="sharing-menu" aria-expanded="false" title="Share This Document" data-bi-name="share">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-sharing"></span>
+		</span>
+		<span class="is-visually-hidden-touch is-hidden-portrait">Share</span>
+	</button>
+	<div class="dropdown-menu has-padding-small" id="sharing-menu">
+		<ul data-bi-name="share-links">
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-twitter" data-bi-name="twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Farchive%2Fmsdn-magazine%2F2011%2Fdecember%2Fmvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf%3FWT.mc_id%3Dtwitter&amp;text=MVPVM%20Design%20Pattern%20-%20The%20Model-View-Presenter-ViewModel%20Design%20Pattern%20for%20WPF%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Farchive%2Fmsdn-magazine%2F2011%2Fdecember%2Fmvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf%3FWT.mc_id%3Dtwitter">
+					<span class="icon">
+						<span class="docon docon-brand-twitter has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Twitter</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-linkedin" data-bi-name="linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Farchive%2Fmsdn-magazine%2F2011%2Fdecember%2Fmvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf%3FWT.mc_id%3Dlinkedin">
+					<span class="icon">
+						<span class="docon docon-brand-linkedin has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>LinkedIn</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-facebook" data-bi-name="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Farchive%2Fmsdn-magazine%2F2011%2Fdecember%2Fmvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf%3FWT.mc_id%3Dfacebook">
+					<span class="icon">
+						<span class="docon docon-brand-facebook has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Facebook</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-email" data-bi-name="email" href="mailto:?subject=%5BShared%20Article%5D%20MVPVM%20Design%20Pattern%20-%20The%20Model-View-Presenter-ViewModel%20Design%20Pattern%20for%20WPF%20%7C%20Microsoft%20Docs&amp;body=MVPVM%20Design%20Pattern%20-%20The%20Model-View-Presenter-ViewModel%20Design%20Pattern%20for%20WPF%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Farchive%2Fmsdn-magazine%2F2011%2Fdecember%2Fmvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf%3FWT.mc_id%3Demail">
+					<span class="icon">
+						<span class="docon docon-mail-message-fill has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Email</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>				</li>
+				<li>
+<div class="dropdown has-caret">
+	<button class="dropdown-trigger button is-text is-small is-icon-only-touch has-inner-focus" aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span class="is-visually-hidden-touch is-hidden-portrait">Theme</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector has-padding-small">
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Light					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>				</li>
+				<li>
+					<a class="docs-sign-in auth-status-determined not-authenticated button is-text has-inner-focus has-text-primary is-small" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#">Sign in</a>
+					<div class="dropdown has-caret auth-status-determined authenticated">
+						<button class="dropdown-trigger button is-text has-inner-focus is-small is-icon-only-touch has-inner-focus" aria-label="Your Account" aria-controls="user-menu" aria-expanded="false">
+							<span class="icon" aria-hidden="true">
+								<span class="image">
+									<img class="has-body-background-medium is-rounded" data-profile-property="avatarThumbnailUrl">
+								</span>
+							</span>
+							<span class="is-inline-truncated has-margin-left-small" data-profile-property="userName"></span>
+						</button>
+						<div class="dropdown-menu box" id="user-menu" role="menu">
+							<div class="media is-user-dir">
+								<div class="media-left">
+									<span class="image is-64x64" aria-hidden="true">
+										<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+									</span>
+								</div>
+								<div class="media-content">
+									<p class="title">
+										<span class="is-inline-truncated has-max-width-200" data-profile-property="userName"></span>
+									</p>
+									<p class="subtitle has-margin-bottom-none">
+										<span class="is-inline-truncated has-max-width-200" data-profile-property="upn"></span>
+									</p>
+									<ul class="is-unstyled has-margin-none has-margin-top-small">
+										<li><a href="https://docs.microsoft.com/profile" data-profile-property="profileUrl">Profile</a></li>
+										<li><a href="https://docs.microsoft.com/profile" data-profile-property="bookmarksUrl">Bookmarks</a></li>
+										<li><a href="https://docs.microsoft.com/profile" data-profile-property="collectionsUrl">Collections</a></li>
+										<li><a class="docs-sign-out" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#">Sign out</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<button type="button" class="contents-button button is-small is-text is-hidden-tablet has-inner-focus is-hidden-tablet" aria-label="Contents" data-bi-name="contents-expand-">
+				<span class="icon">
+					<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+				</span>
+				<span>Contents</span>
+			</button>
+		</div>
+	</div>
+
+		<div id="banner-holder" class="has-default-focus has-overflow-hidden">
+		</div>
+
+	<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<section data-dismissable="disappearing" class="uhf-container has-padding has-padding-top-small has-padding-bottom-small is-info alert is-banner">
+				<button data-dismiss="" type="button" class="delete is-absolute has-top-zero has-right-zero has-margin-extra-small is-large"><span class="visually-hidden">Dismiss alert</span></button>
+				<div class="columns">
+					<div class="column is-12">
+						<div class="level">
+							<div class="level-left has-flex-shrink">
+								<div class="level-item has-flex-shrink">
+									<p class="has-text-white-static disclaimer-title has-margin-top-extra-small has-margin-right-medium has-line-height-reset is-size-7-mobile">
+										<span class="icon">
+											<span class="docon docon-status-error-outline" aria-hidden="true"></span>
+										</span>
+										<span>We're no longer updating this content regularly. Check the <a href="https://support.microsoft.com/en-us/lifecycle/selectindex">Microsoft Product Lifecycle</a> for information about how this product, service, technology, or API is supported.</span>
+									</p>
+								</div>
+							</div>
+							
+			<div class="level-right has-margin-extra-small-mobile">
+				<div class="level-item has-flex-justify-content-start-mobile has-padding-small-tablet">
+					<a href="https://docs.microsoft.com/" class="button is-info is-outlined is-small has-margin-left-extra-small has-margin-right-extra-small">
+						<span>Return to main site</span>
+					</a>
+				</div>
+			</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-top-padding  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="is-fixed is-flex is-flex-column" role="navigation" aria-label="Primary" data-bi-name="left toc" style="width: 364px; top: 24px; bottom: 71px;"><form action="javascript:" role="search" aria-label="Search" class="is-full-width has-margin-bottom-small"><label class="visually-hidden" for="ax-7">Search</label><div class="autocomplete is-block" data-bi-name="autocomplete"><!---->
+		<div class="control has-icons-left">
+			<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-7" class="autocomplete-input input control has-icons-left is-small is-full-width" type="text" aria-expanded="false" aria-owns="ax-8-listbox" aria-activedescendant="" placeholder="Filter by title">
+
+			<span class="icon is-small is-left" aria-hidden="true">
+				<span class="has-text-primary docon docon-filter"></span>
+			</span>
+
+			<span class="autocomplete-loader loader has-text-primary" aria-hidden="true" hidden=""></span>
+		</div>
+
+		<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-8-listbox" hidden="">
+			
+		</ul><!----></div></form><ul class="tree is-vertically-scrollable has-flex-grow has-flex-shrink" role="tree" aria-label="Table of contents" data-bi-name="tree"><li role="none"><a aria-setsize="2" aria-level="1" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/msdn-magazine-issues">MSDN Magazine Issues</a></li><li class="tree-item is-expanded" aria-setsize="2" aria-level="1" aria-posinset="2" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>2011</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="13" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/msdn-magazine-issues-from-2011">Overview</a></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>January</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>February</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>March</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>April</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="6" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>May</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="7" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>June</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="8" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>July</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="9" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>August</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="10" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>September</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="11" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>October</span></li><li class="tree-item" aria-setsize="13" aria-level="2" aria-posinset="12" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>November</span></li><li class="tree-item is-expanded" aria-setsize="13" aria-level="2" aria-posinset="13" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>December</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/msdn-magazine-december-2011">Overview</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/the-cutting-edge-a-context-sensitive-progress-bar-for-asp-net-mvc">The Cutting Edge - A Context-Sensitive Progress Bar for ASP.<wbr>NET MVC</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/building-html5-applications-integrating-geolocation-into-web-applications">Building HTML5 Applications - Integrating Geolocation into Web Applications</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/the-working-programmer-parser-combinators">The Working Programmer - Parser Combinators</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/december-2011-code-downloads">December 2011 Code Downloads</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/editor-s-note-31-days-of-mango">Editor's Note - 31 Days of Mango</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/asp-net-security-hack-proofing-your-asp-net-applications">ASP.<wbr>NET Security - Hack-Proofing Your ASP.<wbr>NET Applications</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="8" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/test-run-tabu-algorithms-and-maximum-clique">Test Run - Tabu Algorithms and Maximum Clique</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="9" role="treeitem" tabindex="0" class="tree-item is-leaf is-selected" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf">MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="10" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/alm-rangers-visual-studio-alm-rangers-rise-of-the-vm-factory">ALM Rangers - Visual Studio ALM Rangers -- Rise of the VM Factory</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="11" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/windows-phone-how-to-translate-common-design-principles-to-the-windows-phone">Windows Phone - How To Translate Common Design Principles To The Windows Phone</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="12" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/forecast-cloudy-completing-the-trip-with-appfabric-queues">Forecast:Cloudy - Completing the Trip with AppFabric Queues</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="13" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/video-encoding-saving-and-reusing-settings-for-video-encoding">Video Encoding - Saving and Reusing Settings for Video Encoding</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="14" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/windows-phone-a-mobile-phone-is-not-just-a-small-computer">Windows Phone - A Mobile Phone Is Not Just a Small Computer</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="15" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/data-points-handling-entity-framework-validations-in-wcf-data-services">Data Points - Handling Entity Framework Validations in WCF Data Services</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="16" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/don-t-get-me-started-jobs-and-ritchie-entangled-photons">Don't Get Me Started - Jobs and Ritchie: Entangled Photons</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="17" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/ui-frontiers-video-feeds-on-windows-phone-7">UI Frontiers - Video Feeds on Windows Phone 7</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="18" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/sysinternals-procdump-v4-0-writing-a-plug-in-for-sysinternals-procdump-v4-0">Sysinternals ProcDump v4.0 - Writing a Plug-in for Sysinternals ProcDump v4.0</a></li><li role="none"><a aria-setsize="19" aria-level="3" aria-posinset="19" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/windows-with-c-thread-pool-timers-and-i-o">Windows with C++ - Thread Pool Timers and I/O</a></li></ul></li></ul></li></ul></nav>
+			</div>
+
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+				<div id="main-column" class="column  is-full is-four-fifths-desktop ">
+
+					<main id="main" role="main" class="content " data-bi-name="content" lang="en-us" dir="ltr">
+
+
+
+						
+
+						<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+							<li class="displayDate">
+								<time role="presentation" datetime="2015-08-10T00:00:00.000Z" data-article-date-source="ms.date">08/09/2015</time>
+							</li>
+								<li class="readingTime">21 minutes to read</li>
+
+						</ul>
+
+						<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline">
+							<h3>In this article</h3>
+						<ol><li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-mvc-pattern">The MVC Pattern</a></li><li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-mvp-pattern">The MVP Pattern</a></li><li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-mvpvm-pattern">The MVPVM Pattern</a></li><li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#mvpvm-the-model">MVPVM: The Model</a></li><li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#mvpvm-the-view">MVPVM: The View</a></li><li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#mvpvm-the-presenter">MVPVM: The Presenter</a></li><li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#mvpvm-the-viewmodel">MVPVM: The ViewModel</a></li><li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-business-logic-layer">The Business Logic Layer</a></li><li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-data-access-layer">The Data Access Layer</a></li><li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#understanding-history-benefitting-from-experience">Understanding History, Benefitting from Experience</a></li></ol></nav>
+
+
+						<!-- <content> -->
+							<hr>
+<p>December 2011</p>
+<p>Volume 26 Number 12</p>
+<h1 id="mvpvm-design-pattern---the-model-view-presenter-viewmodel-design-pattern-for-wpf">MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF</h1>
+<p>By <a href="https://docs.microsoft.com/en-us%5Carchive%5Cmsdn-magazine%5Cauthors%5CBill_Kratochvil" data-linktype="absolute-path">Bill Kratochvil</a> | December 2011</p>
+<p>Of all the successful projectsI’ve been a part of, the most successful ones shared a common result: As the application grew larger, the codebase became smaller. On the surface, this may seem contradictory, but coding in an Agile environment lends itself to a shrinking codebase. As requirements change, refactoring occurs, and this refactoring opportunity—coupled with hindsight—provides the ability to reuse existing components more efficiently while eliminating duplicate code in the process.</p>
+<p>In contrast, there have been some monolithic projects, which were sometimes deemed successful, where the source code grew and grew with little opportunity for reuse. These projects became resource-intensive and a risk to future growth. What was the fundamental difference? The infrastructural design pattern used. The patterns you use will determine whether you paint yourself into a corner or keep your back to the open opportunities the future might bring.</p>
+<p>In this article, I’ll present one such pattern—overlooked by many Windows Presentation Foundation (WPF) developers because of the popularity of the Model-View-ViewModel (MVVM) pattern—called the Model-View-Presenter-ViewModel (MVPVM) pattern. This enterprise application design pattern was introduced in the Microsoft patterns &amp; practices Prism project (<a href="http://prism.codeplex.com/" data-linktype="external">Prism.CodePlex.com</a>). (Note: This pattern was unnamed, so I refer to it as MVPVM.) Prism is best described with an excerpt from its Web site overview:</p>
+<p>“Prism provides guidance designed to help you more easily design and build rich, flexible, and easy-to-maintain Windows Presentation Foundation (WPF) desktop applications, Silverlight Rich Internet Applications (RIAs), and Windows Phone 7 applications. Using design patterns that embody important architectural design principles, such as separation of concerns and loose coupling, Prism helps you to design and build appli­cations using loosely coupled components that can evolve independently but that can be easily and seamlessly integrated into the overall application. These types of applications are known as composite applications.”</p>
+<p>The popularity and success of MVVM overshadows MVPVM even though MVPVM is the evolution of MVVM (as this article will demonstrate). MVPVM provides all of the power and capability of MVVM while introducing the scalability and extensibility of the Model-View-Presenter (MVP) pattern. If your understanding is that MVVM has evolved from MVP for WPF, then you’ll find this article enlightening.</p>
+<p>Before we can fully appreciate the power and benefits of MVPVM, we have to understand how this pattern evolved—we have to understand our history. The Model-View-Controller (MVC) pattern is a crucial component to achieving this understanding, so I’ll first introduce MVC, perhaps in a way you’ve never seen before.</p>
+<h2 id="the-mvc-pattern">The MVC Pattern<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-mvc-pattern" aria-labelledby="the-mvc-pattern"></a></h2>
+<p>Please note that this MVC discussion is within the context of desktop applications; Web applications are another story and beyond the scope of this article.</p>
+<p>In Martin Fowler’s “GUI Architectures” document (<a href="http://bit.ly/11oh7y" data-linktype="external">bit.ly/11OH7Y</a>), he states the following about MVC: “Different people reading about MVC in different places take different ideas from it and describe these as ‘MVC.’ If this doesn’t cause enough confusion, you then get the effect of misunderstandings of MVC that develop through a system of Chinese whispers.” The “Whatsa Controller Anyway” document at <a href="http://bit.ly/7ajves" data-linktype="external">bit.ly/7ajVeS</a> sums up his point nicely stating: “Computer scientists in general have an annoying tendency to overload terms. That is to say, they tend to assign more than one meaning (sometimes contradictory) to the same word.”&nbsp;</p>
+<p>Smalltalk MVC gets further complicated by the fact that developers lack a common core of experience with their great architects in regard to the architect environment. As such, the overloading of terms and “Chinese whispers” are convoluted even more by the fact that most of us don’t even know what a Controller is because we’ve never had to use one—the OS has always handled its functionality for us. With a few facts to provide the common core of experience we lack, you’ll find MVC is actually easy to understand, and that the “C” in MVC has nothing in common with the “P” in MVP.</p>
+<p>The Controller does have a concrete origin (which is well worth understanding but doesn’t necessarily match modern approaches to MVC in the context of current technologies). The founding father of MVC, Trygve Reenskaug, wrote about that in 1979 in his document on “Models-Views-Controllers” (<a href="http://bit.ly/2cdqiu" data-linktype="external">bit.ly/2cdqiu</a>). This document begins to provide some insight on the purpose of the Controller. Reenskaug wrote:</p>
+<p>“A controller is the link between a user and the system. It provides the user with input by arranging for relevant views to present themselves in appropriate places on the screen. It provides means for user output by presenting the user with menus or other means of giving commands and data. The controller receives such user output, translates it into the appropriate messages and passes these messages on to one or more of the views.</p>
+<p>A controller should never supplement the views, it should for example never connect the views of nodes by drawing arrows between them.</p>
+<p>Conversely, a view should never know about user input, such as mouse operations and keystrokes. It should always be possible to write a method in a controller that sends messages to views, which exactly reproduce any sequence of user commands.”</p>
+<p>This concept is illustrated in <strong>Figure 1</strong>.</p>
+<p>A “message,” in the context of MVC object-oriented programming (OOP), is a means of executing methods. They were described as “messages” because back then, virtual calls were a new concept and it was a way of distinguishing them from static function calls. In Chapter 1.2 of the book “Smalltalk, an Introduction to Application Development Using VisualWorks” (Prentice Hall, 1995), by Trevor Hopkins and Bernard Horan, the authors note “… if the receiving object understands the message it has been sent, then one of its internal operations (or methods) will be performed. This, in turn, may cause some computation to take place (by acting on one or more of the object’s internal variables).” (Note: This “message-sending” OOP concept is available in Prism via its EventAggregator.)</p>
+<p>The book nicely outlines the responsibilities of Smalltalk MVC in Chapter 29, “Introduction to Models, Views and Controllers,” by teaching us that Controllers derive from the Controller class. It states, “Instances of this class have a reference to a sensor representing the mouse and keyboard, so that it can process input.” It continues to tell us that the two distinct actions initiated from a Controller are communications with the Model (see <strong>Figure 1</strong>) and communications with the View without affecting the Model.</p>
+<p><img src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/hh580734.kratochvil_figure1_hires(en-us,msdn.10).png" alt="Controller Receives Input and Sends Message (Method to Execute); Views Can’t Catch User Input" title="Controller Receives Input and Sends Message (Method to Execute); Views Can’t Catch User Input" data-linktype="relative-path"><br>
+<strong>Figure 1 Controller Receives Input and Sends Message (Method to Execute); Views Can’t Catch User Input</strong></p>
+<p>In Smalltalk MVC, “every” View will have a Controller and only one Controller at any given time can be active. In the original Smalltalk MVC, the UI was polled; the top-level ControlManager class asks each of the Controllers of the active View if it wants control. Only the View that contains the cursor can accept control. If a View is read-only, there’s a NoController class available that’s designed to refuse control. A View with subviews has the responsibility to poll the Controllers of its subviews. Once a Controller has accepted control, it will query the results of the keyboard or mouse and send messages to the View or Model as applicable, such as mouse move, button click and so on. In MVVM terms, this would be comparable to subscribing to a control’s events in either the View’s codebehind or via a ViewModel command. When a user interacts with the control, the applicable method will be called.</p>
+<p>By this point, you can start to get a glimpse behind the purpose of the Controller within the context of MVC and an environment that doesn’t automatically handle events for you. Unlike Smalltalk MVC developers, WPF developers don’t have to query keyboard buffers and package and raise events. You merely subscribe to them and the applicable method “automagically” receives them via the Microsoft Event Pattern. With this knowledge, the following will perhaps have a different, and less confusing, meaning.</p>
+<p>In Steve Burbeck’s article, “Applications Programming in Smalltalk-80: How to Use Model-View-Controller (MVC)” (<a href="http://bit.ly/3zffcx" data-linktype="external">bit.ly/3ZfFCX</a>), he states the following:</p>
+<p>“The controller interprets the mouse and keyboard inputs from the user, commanding the model and/or the view to change as appropriate. Finally, the model manages the behavior and data of the application domain, responds to requests for information about its state (usually from the view), and responds to instructions to change state (usually from the controller).”</p>
+<p>See <strong>Figure 2</strong> for an illustration of this concept.</p>
+<p><img src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/hh580734.kratochvil_figure2_hires(en-us,msdn.10).png" alt="Smalltalk Model-View-Controller" title="Smalltalk Model-View-Controller" data-linktype="relative-path"><br>
+<strong>Figure 2 Smalltalk Model-View-Controller</strong></p>
+<p>A final point to bring clarity to what could be a muddy topic is in the document, “Twisting the Triad, the Evolution of the Dolphin Smalltalk MVP Application Framework,” by Andy Bower and Blair McGlashan at <a href="http://bit.ly/o8tdtq" data-linktype="external">bit.ly/o8tDTQ</a> (PDF download). This is one of the more comprehensive documents I’ve read on the topic. The authors note the following about the Controller: “The views, of course, are responsible for displaying the domain data while the controllers handle the raw user gestures that will eventually perform actions on this data.”&nbsp;&nbsp;</p>
+<p>I bring this final point up so that I have an opportunity to provide another definition. To fully comprehend the article (and others on MVC), you have to understand what “gestures” means (see <strong>Figure 1</strong>). In my research, I came across the article, “An Introduction to GUI Programming with UIL and Motif” (<a href="http://bit.ly/pkzmgc" data-linktype="external">bit.ly/pkzmgc</a>), which states the following:</p>
+<p>“The essence of these steps is that a Motif program does nothing until the user requests some action. The actions are requested by selecting a menu item, by clicking a button or other window, or by pressing a key. These, collectively, are user gestures. Each gesture will trigger an application function to carry out some tasks.”</p>
+<p>Andy Bower, coauthor of “Twisting the Triad,” shared his thoughts on “gestures” with me:</p>
+<p>“My take on ‘gestures’ is that they’re a coalescence of one or more user events into something more meaningful.</p>
+<p>For example a TextController might absorb key down and key up events and convert them into individual ‘keypress’ gestures. Similarly, a SelectionInListController (the Controller attached to a list box) might absorb several mouse-down, mouse-tracking and mouse-up events within a list and treat them as a single list ‘selection’ gesture.</p>
+<p>Looked at like this, we see that a modern event-driven OS already does most of this gesture processing for us.”</p>
+<p>To summarize Controller logic, you can see that the Controller function is rather consistent among the variations of MVC referenced. Because Microsoft controls (widgets) handle “the mouse and keyboard inputs from the user,” you merely subscribe to the events and point to the method that needs to be executed—the “Controller” within your smart controls executes the method for you (handled at the OS level). As such, you don’t have a need for a Controller, as clearly indicated by the “Twisting the Triad” article. Without the Controller, you’re left with the Model-View pattern for Windows applications. You have to bear this in mind as you study MVC and its application and presentation models because without the Controller, there is no Triad (see <strong>Figure 3</strong>).</p>
+<p><img src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/hh580734.kratochvil_figure3_hires(en-us,msdn.10).png" alt="Without the Controller, It Has Been Model-View (not Model-View-Controller)" title="Without the Controller, It Has Been Model-View (not Model-View-Controller)" data-linktype="relative-path"><br>
+<strong>Figure 3 Without the Controller, It Has Been Model-View (not Model-View-Controller)</strong></p>
+<p>It’s worth mentioning that it was not only the Controller that caused ambiguity with MVC. With Smalltalk MVC, the business/domain logic is in the Model, and with VisualWorks MVC the ApplicationModel contains the “application” logic required to present one or more business/domain objects to the user (see <strong>Figure 4</strong>). The “Twisting the Triad” article covers this in more detail. If you consider that the Application Model and Presentation Model have the same functionality, with the distinct difference being that the Presentation Model “cannot” access the View (Martin Fowler made a clear distinction so as not to overload terms), then WPF developers can quickly grasp Presentation Model because it’s in essence MVVM. John Gossman, founding father of MVVM, explains this in his “PresentationModel and WPF” blog entry at <a href="http://bit.ly/pfs6cv" data-linktype="external">bit.ly/pFs6cV</a>. Like Martin Fowler, he was careful not to overload terms. This effectively gives us a clear understanding of what MVVM is; it’s a “WPF-specific version of the PresentationModel pattern.”</p>
+<p><img src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/hh580734.kratochvil_figure4_hires(en-us,msdn.10).png" alt="VisualWorks Model-View-Controller" title="VisualWorks Model-View-Controller" data-linktype="relative-path"><br>
+<strong>Figure 4 VisualWorks Model-View-Controller</strong></p>
+<p>Once you can see MVC in its true light, it helps you understand the true roles of the Model and View. These are in essence the only two locations for business/domain logic. After reading “Twisting the Triad,” you can see it was the responsibilities of the Application Model that were moved to the Presenter and that you can’t simply replace the Controller with a Presenter—it wouldn’t make sense, because they aren’t synonymous.</p>
+<h2 id="the-mvp-pattern">The MVP Pattern<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-mvp-pattern" aria-labelledby="the-mvp-pattern"></a></h2>
+<p>It’s beyond the scope of this article to go into MVP with the attention it deserves; fortunately, there are numerous documents that address it, such as “Twisting the Triad” and the “Potel Paper,” which you can download at <a href="http://bit.ly/df4gnn" data-linktype="external">bit.ly/dF4gNn</a> (PDF).</p>
+<p>I will, however, note that the “Twisting the Triad” article states an important point that I alluded to, which led to the evolution of MVC to MVP:</p>
+<p>“Another irritating feature of MVC, at least with respect to Dolphin, was that the idea of a controller did not fit neatly into the Windows environment. Microsoft Windows, like most modern graphical operating systems, provides a set of native widgets from which user interfaces can be constructed. These ‘windows’ already include most of the controller functionality embodied as part of the underlying operating system control.”</p>
+<p>I’d also like to highlight from Martin Fowler’s “GUI Architectures” article his statement that “This need to manipulate the widgets directly was seen by many as a bit of dirty workaround and helped develop the Model-View-Presenter approach.” This is important to understand because MVVM has ingrained the Presentation Model mentality into many WPF developers; they believe it’s “bad programming” to update the View directly. This is true for MVVM and the Presentation Model because once you reference the View, you can no longer reuse the ViewModel with a different View (the main reason for this rule). This limiting factor was one of the reasons Smalltalk MVC evolved to the MVP pattern. With MVPVM, developers can access the View and ViewModel directly (it’s tightly coupled), which permits the View and ViewModel to remain completely decoupled (see <strong>Figure 5</strong>). Views can reuse different ViewModels and ViewModels can be reused by different Views (as you’ll see later when I discuss the MVPVM pattern); this is one of the many great benefits of MVPVM.</p>
+<p><img src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/hh580734.kratochvil_figure5_hires(en-us,msdn.10).png" alt="Model-View-Presenter, Supervising Controller" title="Model-View-Presenter, Supervising Controller" data-linktype="relative-path"><br>
+<strong>Figure 5 Model-View-Presenter, Supervising Controller</strong></p>
+<p>Andy Bower shared the following information on the topic with me to provide further clarification:</p>
+<p>“It’s perhaps worth pointing out that the aim of all of these patterns is reuse via plugability. Keeping the coupling loose wherever possible and the interfaces as small as possible gives maximum reuse in the way the components can be recombined.</p>
+<p>However, note that the Model has effectively two interfaces that must be compatible with any associated View and Presenter. The first is the standard function call interface, used for getting/setting values and performing commands. The second is the event interface, which must be the same as that expected by the View (observer pattern). This combination of interfaces can be referred to as a ‘protocol.’</p>
+<p>For example, in Dolphin MVP, a list widget (triad) needs three components with compatible protocols. A ListModel, a ListView and a ListPresenter.”</p>
+<p>Once you understand why you don’t want to update a View directly—and realize that this reason contributed to a new design pattern that would permit you to effectively reuse objects by eliminating the constraint of not being able to update the View—then you have the option to embrace the new opportunities that evolution offers. You live in an Agile world and—like your code—you have to change your thought patterns “lest history repeats itself.”</p>
+<h2 id="the-mvpvm-pattern">The MVPVM Pattern<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-mvpvm-pattern" aria-labelledby="the-mvpvm-pattern"></a></h2>
+<p>I was taught this pattern early in Prism’s lifecycle, specifically in Drop 7 of the CompositeWPF. Lost in all of the mystical powers of Prism, I recognized the MVP pattern, which helped me find some footing. I quickly learned (as I teach new developers) to simply go to the Presenter and you’ll have your starting point for figuring out the code and application. How code execution gets there can be learned later and doesn’t have to interfere with critical timelines; the impact of the difficult learning curves can be managed.</p>
+<p>The following definitions of the MVPVM components have excerpts from “Twisting the Triad” as applicable; I found this information to be informative, comprehensive and accurate, so in the interest of presenting to you the best information possible, I’ll merely quote this article’s definitions. These definitions hold true today for MVPVM (see <strong>Figure 6</strong>) as they did for MVP back in March 2000 when “Twisting the Triad” was written.</p>
+<p><img src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/hh580734.kratochvil_figure6_hires(en-us,msdn.10).png" alt="Model-View-Presenter-ViewModel" title="Model-View-Presenter-ViewModel" data-linktype="relative-path"><br>
+<strong>Figure 6 Model-View-Presenter-ViewModel</strong></p>
+<p>(Note: Prism is the context of this article, however, MVPVM will work without Prism; the various components will simply be tightly coupled to their implementation versus being resolved—loosely coupled by the Unity or Managed Extensibility Framework [MEF] dependency injection container.)</p>
+<h2 id="mvpvm-the-model">MVPVM: The Model<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#mvpvm-the-model" aria-labelledby="mvpvm-the-model"></a></h2>
+<p>“This is the data upon which the user interface will operate. It is typically a domain object and the intention is that such objects should have no knowledge of the user interface.” —“Twisting the Triad”</p>
+<p>The separation of the Model from the ViewModel is required to address the concerns of dependency injection and its use within the Business Logic Layer (BLL) and Data Access Layer (DAL) to Create, Read, Update, Delete and List (CRUDL) persisted data. In MVPVM, only the DAL has access to the persisted Model objects.</p>
+<h2 id="mvpvm-the-view">MVPVM: The View<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#mvpvm-the-view" aria-labelledby="mvpvm-the-view"></a></h2>
+<p>“The behavior of a view in MVP is much the same as in MVC. It is the view’s responsibility to display the contents of a model. The model is expected to trigger appropriate change notifications whenever its data is modified and these allow the view to ‘hang off’ the model following the standard Observer pattern. In the same way as MVC does, this allows multiple views to be connected to a single model.” —“Twisting the Triad”</p>
+<p>(Note: I used the preceding quote to emphasize that MVP isn’t a new pattern and that it’s as valid today as it was when MVP evolved from MVC. However, the quote does reference the “Model,” whereas MVPVM uses the “ViewModel.”)&nbsp;&nbsp;</p>
+<p>With MVPVM, there’s never a need to have code in codebehind. The Presenter has access to the View and can subscribe to events, manipulate controls and manipulate the UI as required. This proved beneficial while developing the multi-targeted application that accompanies this article. The User ListBox wouldn’t respect the data binding for the selection changed event, so I had to develop a way that would work for all three platforms (because they share the same code). When the View is activated, I call the WireUpUserListBox (see <strong>Figure 7</strong>, line 174) and use the View to obtain a reference to my lstUserList control (which resides in a DataTemplate). Once it’s found, I wire up to the SelectionChanged event and update the ViewModel SelectedUser property. This works on the desktop, Silverlight and Windows Phone.</p>
+<p><img src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/hh580734.kratochvil_figure7_hires(en-us,msdn.10).png" alt="Benefits of Being Able to Access the View Directly" title="Benefits of Being Able to Access the View Directly" data-linktype="relative-path"><br>
+<strong>Figure 7 Benefits of Being Able to Access the View Directly</strong></p>
+<p>A View has no knowledge of the ViewModel, so they aren’t tightly coupled. As long as a ViewModel supports all of the properties to which a View binds, it can easily use the View. The Presenter is responsible for wiring up Views to their ViewModels by setting their DataContext to the applicable ViewModel.</p>
+<h2 id="mvpvm-the-presenter">MVPVM: The Presenter<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#mvpvm-the-presenter" aria-labelledby="mvpvm-the-presenter"></a></h2>
+<p>“While it is the view’s responsibility to display model data, it is the presenter that governs how the model can be manipulated and changed by the user interface. This is where the heart of an application's behavior resides. In many ways, an MVP presenter is equivalent to the application model in MVC; most of the code dealing with how a user interface works is built into a presenter class. The main difference is that a presenter is directly linked to its associated view so that the two can closely collaborate in their roles of supplying the user interface for a particular model.” —“Twisting the Triad”</p>
+<p>The Presenter will have dependencies on the interfaces for the BLLs from which it needs to retrieve domain objects (data), as shown in the left pane of <strong>Figure 8</strong>. It will use the resolved instances as configured in the module (see <strong>Figure 8</strong>, bottom right pane) or bootstrapper to access the data and populate the ViewModel.</p>
+<p><img src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/hh580734.kratochvil_figure8_hires(en-us,msdn.10).png" alt="Security Module Code" title="Security Module Code" data-linktype="relative-path"><br>
+<strong>Figure 8 Security Module Code</strong></p>
+<p>Typically, only the Presenter will be tightly coupled in MVPVM components. It will be tightly coupled to the View, ViewModel and the BLL inter­faces. Presenters aren’t intended to be reused; they address specific concerns as well as the business logic/rules for those concerns. In cases where a Presenter can be reused across enterprise applications, it’s likely a module would be better suited for the task—that is, you could create a login module (project) that could be reused by all of your enterprise applications. If you code against an interface, the module can be easily reused using dependency injection technologies such as the MEF or Unity.</p>
+<h2 id="mvpvm-the-viewmodel">MVPVM: The ViewModel<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#mvpvm-the-viewmodel" aria-labelledby="mvpvm-the-viewmodel"></a></h2>
+<p>“In MVP, the model is purely a domain object and there is no expectation of (or link to) the user interface at all.” —“Twisting the Triad”</p>
+<p>This prevents the ViewModel from being tightly coupled to a single View, permitting it to be reused by numerous Views. Likewise, the ViewModel will have no application business logic, so ViewModels can be easily shared across enterprise applications. This promotes reuse and application integration. For example, look at <strong>Figure 8</strong>, top right pane, line 28. This SecurityCommandViewModel resides in the Gwn.Library.MvpVm.xxxx project (where xxxx = Silverlight, desktop or Windows Phone). Because a User ViewModel will be required in most applications, this is a reusable component. I have to be careful not to pollute it with business logic specific to the demo application. This isn’t a problem with MVPVM, because the business logic will be handled by the Presenter, not within the ViewModel (see <strong>Figure 6</strong>).</p>
+<p>(Note: As the ViewModel properties are populated by the Presenter, they’ll raise NotifyPropertyChanged events, which will alert the View that it has new data—it’s the View’s responsibility to update itself to the ViewModel data upon notification.)</p>
+<h2 id="the-business-logic-layer">The Business Logic Layer<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-business-logic-layer" aria-labelledby="the-business-logic-layer"></a></h2>
+<p>BLLs have no knowledge of the persisted Model data. They work strictly with domain objects and interfaces. Typically, you’ll use dependency injection to resolve your DAL interface within the BLL, so you can later swap out the DAL without affecting any downstream code. Notice in <strong>Figure 9</strong>, line 34, that I’m using a MockBll implementation for IBusinessLogicLayer for my demo application. Later I can easily replace it with a production imple­mentation of the interface with one line of code because I’ve developed against an interface.</p>
+<p><img src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/hh580734.kratochvil_figure9_hires(en-us,msdn.10).png" alt="Registering BLL, DAL and Commands" title="Registering BLL, DAL and Commands" data-linktype="relative-path"><br>
+<strong>Figure 9 Registering BLL, DAL and Commands</strong></p>
+<p>Business logic isn’t limited to the BLLs. In <strong>Figure 9</strong>, I register named types (for IPresenterCommand) so that I can use dependency injection as a factory. When the user clicks on a button (lines 29–33 in <strong>Figure 10</strong>), the command parameter is resolved (instantiated) by the baseclass and the applicable command is executed. For example, the LoginCommand (<strong>Figure 8</strong>, top right pane) is a command that will activate the UserManagerView. All that was required to wire this up was a Button command in XAML and an entry in the SecurityModule (see <strong>Figure 8</strong>, bottom right pane, line 32).</p>
+<p><img src="./MVPVM Design Pattern - The Model-View-Presenter-ViewModel Design Pattern for WPF _ Microsoft Docs_files/hh580734.kratochvil_figure10_hires(en-us,msdn.10).png" alt="DataTemplate for the UserCommandViewModel" title="DataTemplate for the UserCommandViewModel" data-linktype="relative-path"><br>
+<strong>Figure 10 DataTemplate for the UserCommandViewModel</strong></p>
+<h2 id="the-data-access-layer">The Data Access Layer<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-data-access-layer" aria-labelledby="the-data-access-layer"></a></h2>
+<p>Persisted domain data could be stored in SQL databases or XML or text files, or retrieved from a REST service. With MVPVM, only the DAL holds specific information required to retrieve data. The DAL will only return domain objects to the BLL. This averts the need for the BLL to have knowledge of connection strings, file handles, REST services and so on. This enhances scalability and extensibility; you can easily switch your DAL from an XML file to a cloud service without affecting any existing code outside of the DAL and the application configuration file. As long as your new DAL unit tests work for the CRUDL processes, you can configure the application to use the new DAL without impacting current applications and their usage.</p>
+<h2 id="understanding-history-benefitting-from-experience">Understanding History, Benefitting from Experience<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#understanding-history-benefitting-from-experience" aria-labelledby="understanding-history-benefitting-from-experience"></a></h2>
+<p>Thanks to the patterns &amp; practices team, I’ve been able to achieve success for my clients using bleeding-edge technologies and patterns such as MVPVM, without failure. I found that by keeping up with the team’s pace, technologies and patterns, that as newer technologies and patterns emerge, I can pull from past experience to help me more easily find my way in new territory.</p>
+<p>MVP is a constant and consistent pattern that I’ve seen used since the earliest days of my architectural studies using patterns &amp; practices projects. To fully appreciate MVP, you have to understand your history, particularly the components of MVC. This isn’t easy, because of the numerous factors discussed.</p>
+<p>But by understanding our past, and the reason for our evolution, we can more quickly grasp the need for and power of newer patterns. Even with Prism and all of its complexity and magic, you’ll be able to bypass a difficult learning curve by simply knowing this history and appreciating the need for the newer patterns. In all of the successful projects I’ve been involved with since the emergence of this pattern in early drops of Prism, MVPVM has revealed no issues, speed bumps or brick walls (through evolution they appear to have been eliminated), permitting developers to increase velocity as we build applications that are scalable, extensible and stable.</p>
+<hr>
+<p><strong>Bill Kratochvil</strong>, <em>an independent contractor, is a lead technologist and architect for an elite team of developers working on a confidential project for a leading company in the medical industry. His own company, Global Webnet LLC, is based in Amarillo, Texas</em>.</p>
+<p>Thanks to the following technical experts for reviewing this article: <strong>Andy Bower</strong>, <strong>Christina Helton</strong> and <strong>Steve Sanderson</strong></p>
+
+						<!-- </content> -->
+
+						</main>
+
+						<!-- recommended content page section -->
+
+							<nav data-bi-name="recommendation-bottom" hidden="" id="recommended-content-center" class="is-hidden-desktop" aria-labelledby="recommended-content-center-title">
+								<h3 id="recommended-content-center-title" class="is-size-2 has-margin-top-large has-margin-bottom-small">Recommended Content</h3>
+							</nav>
+
+						<!-- end recommended content page section -->
+
+						<!-- rating mobile section -->
+						<!-- end rating mobile section -->
+
+						<!-- feedback section -->
+
+
+
+
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus ">
+<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text has-inner-focus">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>
+						</div>
+					</div>
+
+					<div class="is-size-7 right-container column is-one-quarter is-one-fifth-desktop is-hidden-mobile is-hidden-tablet-only" data-bi-name="pageactions" role="complementary" aria-label="Page Actions">
+						<div id="affixed-right-container" class="doc-outline is-fixed is-vertically-scrollable" style="width: 199.188px; top: 24px; bottom: 71px;">
+								<nav data-bi-name="recommendation-sidebar" hidden="" id="recommended-content-nav" role="navigation" aria-labelledby="recommended-content-nav-title">
+									<h3 id="recommended-content-nav-title">Recommended Content</h3>
+								</nav>
+							<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline">
+								<h3>In this article</h3>
+							<ol><li class=""><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-mvc-pattern">The MVC Pattern</a></li><li class=""><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-mvp-pattern">The MVP Pattern</a></li><li class=""><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-mvpvm-pattern">The MVPVM Pattern</a></li><li class=""><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#mvpvm-the-model">MVPVM: The Model</a></li><li class=""><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#mvpvm-the-view">MVPVM: The View</a></li><li class=""><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#mvpvm-the-presenter">MVPVM: The Presenter</a></li><li class=""><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#mvpvm-the-viewmodel">MVPVM: The ViewModel</a></li><li class="selected"><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-business-logic-layer">The Business Logic Layer</a></li><li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#the-data-access-layer">The Data Access Layer</a></li><li><a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf#understanding-history-benefitting-from-experience">Understanding History, Benefitting from Experience</a></li></ol></nav>
+						</div>
+					</div>
+
+					<!--end of div.columns -->
+				</div>
+
+			<!--end of .primary-holder -->
+			</section>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container"></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive ">
+<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>
+	</div>
+
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+
+
+</body></html>
