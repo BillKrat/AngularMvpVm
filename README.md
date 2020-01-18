@@ -6,7 +6,7 @@ pattern.
 UML Documentation will be created using [Enterprise Architect](https://sparxsystems.com/products/ea/index.html).  A free viewer is available
 at [this Sparx Systems link](https://www.sparxsystems.com/bin/EALite.msi)
 
-![MVP-VM Overview](./artifacts/docs/images/readme/mvpvm-overview.png)
+![MVP-VM Overview](./artifacts/docs/images/architecture/mvpvm-overview.png)
 
 
 ## What is MVP-VM?
