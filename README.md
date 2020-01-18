@@ -6,7 +6,7 @@ pattern.
 UML Documentation will be created using [Enterprise Architect](https://sparxsystems.com/products/ea/index.html).  A free viewer is available
 at [this Sparx Systems link](https://www.sparxsystems.com/bin/EALite.msi)
 
-![MVP-VM Overview](./artifacts/docs/images/architecture/mvpvm-overview.png)
+![MVP-VM Overview](https://github.com/BillKrat/AngularMvpVm/blob/master/artifacts/docs/images/architecture/MvpVm-overview.png?raw=true)
 
 
 ## What is MVP-VM?
@@ -70,7 +70,7 @@ This separation permits reuse and has a strong dependency on Event Aggregation a
 This project is configured to edit with Visual Studio code providing the ability to launch
 both the live editing server [Launch Chrome] as well as test scripts [Launch Chrome (test)] 
 
-![Launch Chrome](./artifacts/docs/images/readme/Launch-Chrome.png)
+![Launch Chrome](https://github.com/BillKrat/AngularMvpVm/blob/master/artifacts/docs/images/readme/Launch-Chrome.png?raw=true)
 
-![Launch Test](./artifacts/docs/images/readme/Launch-test.png)
+![Launch Test](https://github.com/BillKrat/AngularMvpVm/blob/master/artifacts/docs/images/readme/Launch-Test.png?raw=true)
 
