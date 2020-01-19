@@ -18,7 +18,7 @@
                   "regexp": "(.*?)"
               },
               "endsPattern": {
-                  "regexp": "Compiled |compile."
+                  "regexp": "ERR!|Compiled"
               }
           }
         }
