@@ -5,13 +5,14 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
       declarations: [
-        AppComponent
+        AppComponent,
+      ],
+      imports: [
+        RouterTestingModule,
       ],
     }).compileComponents();
+
   }));
 
   it('should create the app', () => {
@@ -30,6 +31,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('AngularMvpVm app is running!');
+    expect(compiled.querySelector('h1').innerHTML).toContain('AngularMvpVm app is running!');
   });
 });
