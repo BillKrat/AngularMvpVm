@@ -14,6 +14,7 @@ import { DynamicHostDirective } from './Poc/dynamic-host.directive';
     DynamicContainerComponent,
     DynamicHostDirective
   ],
+  entryComponents: [DynamicComponent],
   imports: [
     BrowserModule,
     AppRoutingModule
