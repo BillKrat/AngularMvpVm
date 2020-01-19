@@ -1,16 +1,24 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { DynamicContainerComponent } from '../app/Poc/dynamic-container/dynamic-container.component';
+import { DynamicComponent } from '../app/Poc/dynamic/dynamic.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
+        DynamicComponent,
+        DynamicContainerComponent,
       ],
       imports: [
         RouterTestingModule,
       ],
+    }).overrideModule(RouterTestingModule, {
+      set: {
+        entryComponents: [DynamicComponent],
+      }
     }).compileComponents();
 
   }));
