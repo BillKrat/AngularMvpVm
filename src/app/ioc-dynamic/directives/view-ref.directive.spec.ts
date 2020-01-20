@@ -1,5 +1,12 @@
-import { DynamicHostDirective } from './dynamic-host.directive';
+import { ViewRefDirective } from './view-ref.directive';
 import { ViewContainerRef } from '@angular/core';
+
+describe('ViewRefDirective', () => {
+  it('should create an instance', () => {
+    const directive = new ViewRefDirective(new MockContainerRef());
+    expect(directive).toBeTruthy();
+  });
+});
 
 export class MockContainerRef implements ViewContainerRef {
   length: number;
@@ -40,10 +47,3 @@ export class MockContainerRef implements ViewContainerRef {
     throw new Error('Method not implemented.');
   }
 }
-
-describe('DynamicHostDirective', () => {
-  it('should create an instance', () => {
-    const directive = new DynamicHostDirective(new MockContainerRef());
-    expect(directive).toBeTruthy();
-  });
-});
