@@ -1,6 +1,7 @@
+import { Type } from '@angular/core';
+
 export class ViewItem {
-    data: any;
-    component: any;
-    constructor() {
+    constructor( public component: Type<any>, public data: any = null ) {
+
     }
 }

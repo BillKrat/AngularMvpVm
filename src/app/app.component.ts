@@ -18,15 +18,17 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
 
-    const item = new ViewItem();
-    item.data = { headline: 'headline #1', body: '#1 Defined in app.component' };
-    item.component = DynamicComponent;
-    this.viewItems.push(item);
+    this.viewItems.push(new ViewItem( DynamicComponent,
+      {
+        headline: 'headline #1',
+        body: '#1 Defined in app.component'
+      }));
 
-    const item2 = new ViewItem();
-    item2.data = { headline: 'headline #2', body: '#2 Defined in app.component' };
-    item2.component = DynamicComponent;
-    this.viewItems.push(item2);
+    this.viewItems.push(new ViewItem( DynamicComponent,
+      {
+        headline: 'headline #2',
+        body: '#2 Defined in app.component'
+      }));
 
     console.log(this.viewItems);
   }

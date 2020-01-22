@@ -11,7 +11,9 @@ import { ViewItem } from '../model/view-item';
 
 export class DynamicContainerComponent implements OnInit, OnDestroy {
   @Input() views: ViewItem[] = new Array<ViewItem>();
-  @ViewChild(ViewRefDirective, { static: true }) viewRef: ViewRefDirective;
+
+  @ViewChild(ViewRefDirective, { static: true })
+  private viewRef: ViewRefDirective;
 
   interval: any;
   imagepath: string;
@@ -33,6 +35,7 @@ export class DynamicContainerComponent implements OnInit, OnDestroy {
       return;
     }
     const factory = new ComponentFactory(this.componentFactoryResolver, this.viewRef);
+
     this.currentAdIndex = (this.currentAdIndex + 1) % this.views.length;
     factory.resolveViewitems(this.views, this.currentAdIndex);
   }
