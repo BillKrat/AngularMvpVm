@@ -171,7 +171,9 @@ describe('resolve()', () => {
     });
 
     it('should resolve an instance with useFactory if LifeTime was set to LifeTime.PerRequest', () => {
-        class A {}
+        class A {
+            test: any;
+        }
 
         container.register([
             {
@@ -182,6 +184,8 @@ describe('resolve()', () => {
         ]);
 
         const instance1 = container.resolve(A);
+        instance1.test = 'hello';
+
         const instance2 = container.resolve(A);
 
         expect(instance1).not.toEqual(instance2);
@@ -189,11 +193,15 @@ describe('resolve()', () => {
 
     it('should resolve an instances if LifeTime was set to LifeTime.PerRequest', () => {
         @Injectable()
-        class A {}
+        class A {
+            test: any;
+        }
 
         container.register({ token: A, useClass: A, lifeTime: LifeTime.PerRequest });
 
         const instance1 = container.resolve(A);
+        instance1.test = 'hello';
+
         const instance2 = container.resolve(A);
 
         expect(instance1).not.toEqual(instance2);
@@ -202,18 +210,21 @@ describe('resolve()', () => {
     it('should resolve different instances if LifeTime was set to LifeTime.PerRequest in case of nested dependencies', () => {
         @Injectable()
         class A {
-            constructor(@Inject('IB') private b: any) {}
+            testa: any;
+            constructor(@Inject('IB') public b: any) {}
         }
 
         @Injectable()
         class B {
-
+            test: any;
         }
 
         container.register({ token: A, useClass: A, lifeTime: LifeTime.PerRequest });
         container.register({ token: 'IB', useClass: B});
 
         const instance1: any = container.resolve(A);
+        instance1.testa = 'hello';
+
         const instance2: any = container.resolve(A);
 
         expect(instance1).not.toMatch(instance2);
@@ -226,10 +237,14 @@ describe('resolve()', () => {
         });
 
         @Injectable()
-        class A {}
+        class A {
+            test: any;
+        }
 
         cont.register({ token: A, useClass: A });
         let instance1 = cont.resolve(A);
+        instance1.test = 'hello';
+        
         let instance2 = cont.resolve(A);
 
         expect(instance1).not.toEqual(instance2);
@@ -265,7 +280,7 @@ describe('resolve()', () => {
 
         const throwableFunc = () => container.resolve('IA');
         console.log(throwableFunc());
-        expect(throwableFunc).toThrow('No provider for B. Trace: IA --> B');
+        expect(throwableFunc).toThrow(new Error('No provider for B. Trace: IA --> B'));
     });
 
     it('should correctly print token in error messages: Token is an InjectionToken', () => {
@@ -281,7 +296,7 @@ describe('resolve()', () => {
         const TB = new InjectionToken<IB>('IB');
 
         const throwableFunc = () => container.resolve(TB);
-        expect(throwableFunc).toThrow('No provider for IB. Trace: IB');
+        expect(throwableFunc).toThrow(new Error('No provider for IB. Trace: IB'));
     });
 
     it('should correctly print token in error messages: Token is a string', () => {
@@ -291,7 +306,7 @@ describe('resolve()', () => {
         container.register({ token: 'IA', useClass: A });
 
         const throwableFunc = () => container.resolve('str');
-        expect(throwableFunc).toThrow('No provider for str. Trace: str');
+        expect(throwableFunc).toThrow(new Error('No provider for str. Trace: str'));
     });
 
     it('should throw an error with a specific message if the 1st token in the line is not registered', () => {
@@ -302,7 +317,7 @@ describe('resolve()', () => {
         container.register([{ token: 'IA', useClass: A }]);
 
         const throwableFunc = () => container.resolve('Fish');
-        expect(throwableFunc).toThrow('No provider for Fish. Trace: Fish');
+        expect(throwableFunc).toThrow(new Error('No provider for Fish. Trace: Fish'));
     });
 
     it('should throw an error with a specific message if the 2nd token in the line is not registered', () => {
@@ -313,7 +328,7 @@ describe('resolve()', () => {
         container.register([{ token: 'IA', useClass: A }]);
 
         const throwableFunc = () => container.resolve('IA');
-        expect(throwableFunc).toThrow('No provider for IB. Trace: IA --> IB');
+        expect(throwableFunc).toThrow(new Error('No provider for IB. Trace: IA --> IB'));
     });
 
     it('should throw an error with a specific message if the 3nd token in the line is not registered', () => {
@@ -330,7 +345,7 @@ describe('resolve()', () => {
         container.register({ token: 'IB', useClass: B });
 
         const throwableFunc = () => container.resolve('IA');
-        expect(throwableFunc).toThrow('No provider for IC. Trace: IA --> IB --> IC');
+        expect(throwableFunc).toThrow(new Error('No provider for IC. Trace: IA --> IB --> IC'));
     });
 
     it('should throw an error if registered class isnt marked with Injectable() decorator', () => {
@@ -339,7 +354,7 @@ describe('resolve()', () => {
         container.register({ token: 'IA', useClass: A });
 
         const throwableFunc = () => container.resolve('IA');
-        expect(throwableFunc).toThrow(`Class A is not injectable. Check if it's decorated with @Injectable() decorator`);
+        expect(throwableFunc).toThrow(new Error(`Class A is not injectable. Check if it's decorated with @Injectable() decorator`));
     });
 
     it('should print Symbol types properly in error messages', () => {
@@ -353,7 +368,7 @@ describe('resolve()', () => {
 
         const throwableFunc = () => container.resolve('IA');
 
-        expect(throwableFunc).toThrow('No provider for IB. Trace: IA --> IB');
+        expect(throwableFunc).toThrow(new Error('No provider for IB. Trace: IA --> IB'));
     });
 
     it('should resolve container instance when injected into class Literal', () => {
@@ -457,6 +472,8 @@ describe('resolve()', () => {
         cont.register({ token: 'A', useFactory: () => ({})});
 
         const instance1 = cont.resolve('A');
+        instance1.test = 'ok';
+
         const instance2 = cont.resolve('A');
 
         expect(instance1).not.toEqual(instance2);
