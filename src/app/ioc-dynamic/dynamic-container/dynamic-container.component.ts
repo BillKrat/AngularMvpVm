@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy, Input, ViewChild, ComponentFactoryResolver} from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ViewChild, ComponentFactoryResolver } from '@angular/core';
 import { ViewRefDirective } from '../directives/view-ref.directive';
 import { ComponentFactory } from '../factories/component-factory';
 import { ViewItem } from '../model/view-item';
@@ -28,31 +28,6 @@ export class DynamicContainerComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.loadComponent();
     this.setRefreshViewInterval();
-    this.poc();
-  }
-
-  poc() {
-    // class A {
-    //   test: any;
-    // }
-
-    const container = new Container();
-
-    @Injectable()
-    class A {
-        constructor(@Inject('d') private a: any) {}
-    }
-    container.register([{ token: 'IA', useClass: A }]);
-
-    const throwableFunc = () => container.resolve('Fish');
-    try {
-      const fish = throwableFunc();
-    } catch( err ) {
-      console.log(err);
-    }
-
-    // expect(instance1).not.toEqual(instance2);
-
   }
 
   ngOnDestroy() {

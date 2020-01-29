@@ -18,13 +18,13 @@ export class Container implements IContainer {
 
     constructor(options?: IContainerOptions) {
         if (options) {
-            this.parent = <IContainer> options.parent;
+            this.parent = options.parent as IContainer;
             this.defaultLifeTime = options.defaultLifeTime || this.defaultLifeTime;
         }
         this.register({ token: Container, useValue: this });
     }
 
-    public register(provider: RegistrationProvider|RegistrationProvider[]): void {
+    public register(provider: RegistrationProvider | RegistrationProvider[]): void {
         const normalizedProvider = this.normalizeProvider(provider);
         this.registerAll(normalizedProvider);
     }
@@ -48,11 +48,11 @@ export class Container implements IContainer {
     public resolveInternal(token: ProviderToken, container: IContainer, traceMessage?: string): IInjectionInstance {
         traceMessage = this.buildTraceMessage(token, traceMessage);
 
-        const registryData = <IRegistryData> this.registry.get(token);
+        const registryData = this.registry.get(token) as IRegistryData;
 
         if (!registryData) {
             if (!this.parent) {
-                throw new NoProviderError(this.getTokenString(token), traceMessage );
+                throw new NoProviderError(this.getTokenString(token), traceMessage);
             }
             return this.parent.resolveInternal(token, container, traceMessage);
         }
@@ -90,9 +90,9 @@ export class Container implements IContainer {
             };
 
             if (isClass) {
-                registryData.factory.inject = this.retrieveInjectionsFromClass(<IConstructor> registryData.factory.value);
+                registryData.factory.inject = this.retrieveInjectionsFromClass(registryData.factory.value as IConstructor);
             } else {
-                registryData.factory.inject = this.convertTokensToInjectionMd(<ProviderToken> provider.inject);
+                registryData.factory.inject = this.convertTokensToInjectionMd(provider.inject as ProviderToken);
             }
 
             registryData.lifeTime = provider.lifeTime || this.defaultLifeTime;
@@ -118,14 +118,14 @@ export class Container implements IContainer {
 
     private instantiateWithFactory(factory: IFactory, container: IContainer, traceMessage: string): IInjectionInstance {
         if (factory.isClass) {
-            const injectable: boolean = this.isInjectable(<IConstructor> factory.value);
+            const injectable: boolean = this.isInjectable(factory.value as IConstructor);
 
             if (!injectable) {
-                throw new ClassNotInjectableError((<IConstructor> factory.value).name);
+                throw new ClassNotInjectableError((factory.value as IConstructor).name);
             }
         }
 
-        const injections = <IInjectionMd[]> factory.inject;
+        const injections = factory.inject as IInjectionMd[];
 
         const resolvedInjections: any[] = injections.map(injection => container.resolveInternal(injection.token, container, traceMessage));
 
@@ -135,35 +135,35 @@ export class Container implements IContainer {
         });
 
         if (factory.isClass) {
-            return new (<IConstructor> factory.value)(...args);
+            return new (factory.value as IConstructor)(...args);
         } else {
-            return (<FactoryFunction> factory.value)(...args);
+            return (factory.value as FactoryFunction)(...args);
         }
     }
 
-    private normalizeProvider(provider: RegistrationProvider|RegistrationProvider[]): IProvider[] {
+    private normalizeProvider(provider: RegistrationProvider | RegistrationProvider[]): IProvider[] {
         return Array.isArray(provider)
             ? provider.map(p => this.normalizeSingleProvider(p))
-            : [ this.normalizeSingleProvider(provider) ];
+            : [this.normalizeSingleProvider(provider)];
     }
 
     private normalizeSingleProvider(provider: RegistrationProvider): IProvider {
         if (typeof provider === 'function') {
-            provider = { token: <IConstructor> provider, useClass: <IConstructor> provider };
+            provider = { token: provider as IConstructor, useClass: provider as IConstructor };
         } else if (!(provider instanceof Object)) {
             throw new InvalidProviderProvidedError(provider);
         }
-        return <IProvider> provider;
+        return provider as IProvider;
     }
 
-    private buildTraceMessage(token: ProviderToken, message: string|undefined): string {
+    private buildTraceMessage(token: ProviderToken, message: string | undefined): string {
         const tokenStr: string = this.getTokenString(token);
         return message ? `${message} --> ${tokenStr}` : `Trace: ${tokenStr}`;
     }
 
     private getTokenString(token: ProviderToken): string {
         if (typeof token === 'function') {
-            return (<IConstructor> token).name;
+            return (token as IConstructor).name;
         } else if (typeof token === 'symbol') {
             return this.symbol2string(token);
         } else {
