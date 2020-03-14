@@ -1,0 +1,23 @@
+// http://www.adventuresontheedge.net/post/2019/11/23/VS-Code-Angular-launch-in-debug-browser-configuration
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "preLaunchTask": "npm start",
+      "url": "http://localhost:4200/",
+      "webRoot": "${workspaceFolder}",
+      "trace": true,
+    },
+    {
+      "name": "Launch Chrome (Test)",
+      "type": "chrome",
+      "request": "launch",
+      "preLaunchTask": "npm test",
+      "url": "http://localhost:9876/debug.html",
+      "webRoot": "${workspaceFolder}"
+    },
+  ]
+}
