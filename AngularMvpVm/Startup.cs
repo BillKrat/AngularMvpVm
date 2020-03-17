@@ -11,7 +11,14 @@ using AngularMvpVm.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Adventures.Common.Configuration;
 
+/*  Authentication information follows:
+ *  https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-3.1&tabs=visual-studio
+ *  
+ *  Secrets
+ *  https://www.blinkingcaret.com/2017/06/21/keeping-secrets-in-asp-net-core/
+ */
 namespace AngularMvpVm
 {
     public class Startup
@@ -27,8 +34,20 @@ namespace AngularMvpVm
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    {
+                        // Use our configuration manager that will by default use the appsettings.json
+                        // file unless the %appdata%\Adventures\login-info.txt file exists - then its
+                        // connectionString value will be used.  This is so we don't check in our SQL 
+                        // server login credentials by mistake, while having the ability to use local
+                        // or external SQL Server connection
+                        IConfigurationManager configurationmanager =
+                            new DefaultConfigurationManager(Configuration);
+
+                        var connectionStr = configurationmanager.GetConnectionString("Adventures");
+
+                        options.UseSqlServer(connectionStr);
+                    }
+                );
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -40,6 +59,7 @@ namespace AngularMvpVm
                 .AddIdentityServerJwt();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
