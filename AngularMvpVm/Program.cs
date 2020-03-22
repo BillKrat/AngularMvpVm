@@ -11,7 +11,7 @@ namespace AngularMvpVm
         {
             CreateHostBuilder(args).Build().Run();
         }
-
+        // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-3.1
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureLogging(log =>

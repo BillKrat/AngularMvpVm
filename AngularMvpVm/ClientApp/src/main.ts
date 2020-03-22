@@ -7,9 +7,13 @@ import { environment } from './environments/environment';
 export function getBaseUrl() {
   return document.getElementsByTagName('base')[0].href;
 }
+export function getServiceUrl() {
+  return 'https://localhost:44303/';
+}
 
 const providers = [
-  { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] }
+  { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] },
+  { provide: 'SERVICE_URL', useFactory: getServiceUrl, deps:[]}
 ];
 
 if (environment.production) {

@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace AngularMvpVm.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -28,6 +28,8 @@ namespace AngularMvpVm.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            _logger.LogInformation("Generating WeatherForecast data");
+
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

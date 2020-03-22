@@ -14,12 +14,12 @@
         "problemMatcher": {
           "pattern": "$tsc",
           "background": {
-              "beginsPattern": {
-                  "regexp": "(.*?)"
-              },
-              "endsPattern": {
-                  "regexp": "ERR!|Compiled"
-              }
+            "beginsPattern": {
+              "regexp": "(.*?)"
+            },
+            "endsPattern": {
+              "regexp": "ERR!|Compiled"
+            }
           }
         }
       },
@@ -32,6 +32,12 @@
           "kind": "test",
           "isDefault": true
         }
+      },
+      {
+        "type": "npm",
+        "script": "build",
+        "group": "build",
+        "problemMatcher": []
       }
     ]
   }

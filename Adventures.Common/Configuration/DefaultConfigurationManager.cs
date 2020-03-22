@@ -9,18 +9,21 @@ namespace Adventures.Common.Configuration
     public class DefaultConfigurationManager : IConfigurationManager
     {
         private IConfiguration _configuration;
+        private string _connectionString;
 
-        public DefaultConfigurationManager(){ }
-
-        public DefaultConfigurationManager(IConfiguration configuration)
+         public DefaultConfigurationManager(IConfiguration configuration)
         {
             _configuration = configuration;
         }
 
-        public string GetConnectionString(string connectionName, bool bypassExternal = false)
+        public string GetConnectionString(string connectionName = null, bool bypassExternal = false)
         {
-            var connection = _configuration.GetConnectionString(connectionName);
-            if (bypassExternal) return connection;
+
+            if (connectionName == null && _connectionString != null)
+                return _connectionString;
+
+            _connectionString = _configuration.GetConnectionString(connectionName);
+            if (bypassExternal) return _connectionString;
 
             // If the %appdata%/<connectionName>/login-info.txt file exists then 
             // we'll use its ConnectionString value (assuming json file) overriding 
@@ -34,11 +37,11 @@ namespace Adventures.Common.Configuration
                     var content = File.ReadAllText(apiFile);
                     JObject data = (JObject) JsonConvert.DeserializeObject(content);
                     JValue fileConnection = (JValue) data["ConnectionString"];
-                    connection = fileConnection.Value<string>();
+                    _connectionString = fileConnection.Value<string>();
                 }
                 catch { /* Do not allow errors to crash process */ }
             }
-            return connection;
+            return _connectionString;
         }
     }
 }

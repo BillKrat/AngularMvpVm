@@ -12,12 +12,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{7F02A1CD-D
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventures.Common", "Adventures.Common\Adventures.Common.csproj", "{DB620CDC-E168-4D11-992A-70688526FE4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adventures.Common", "Adventures.Common\Adventures.Common.csproj", "{DB620CDC-E168-4D11-992A-70688526FE4C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5503661E-3CB9-4A57-99A7-DDD0F09B8EF5}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventures.Common.Test", "Adventures.Common.Test\Adventures.Common.Test.csproj", "{B5BDD6DF-3C78-45A0-A4A0-C4FA05B6ADCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{DB620CDC-E168-4D11-992A-70688526FE4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB620CDC-E168-4D11-992A-70688526FE4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB620CDC-E168-4D11-992A-70688526FE4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5BDD6DF-3C78-45A0-A4A0-C4FA05B6ADCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5BDD6DF-3C78-45A0-A4A0-C4FA05B6ADCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5BDD6DF-3C78-45A0-A4A0-C4FA05B6ADCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5BDD6DF-3C78-45A0-A4A0-C4FA05B6ADCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
