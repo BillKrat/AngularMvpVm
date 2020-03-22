@@ -10,7 +10,7 @@ export class NodeService {
   constructor(private http: HttpClient) { }
 
   getFiles() {
-    return this.http.get(AppConstants.BaseUrl +'api/Files/JsonFile')
+    return this.http.get(AppConstants.BaseUrl + 'api/Files/JsonFile')
       .toPromise()
       .then(res => <TreeNode[]>res["data"]);
   }

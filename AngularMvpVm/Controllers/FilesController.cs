@@ -13,9 +13,9 @@ namespace HelloWorldData.Controllers
     [Route("api/[controller]")]
     public class FilesController : Controller
     {
-        private readonly IHostingEnvironment _hostEnvironment;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public FilesController(IHostingEnvironment hostEnvironment)
+        public FilesController(IWebHostEnvironment hostEnvironment)
         {
             _hostEnvironment = hostEnvironment;
 
@@ -33,8 +33,7 @@ namespace HelloWorldData.Controllers
             }
         }
 
-        // api/Files/SystemFiles
-        #region public DTONode SystemFiles()
+        #region // api/Files/SystemFiles  GET 
         [HttpGet("[action]")]
         public DTONode SystemFiles()
         {
@@ -57,6 +56,7 @@ namespace HelloWorldData.Controllers
         }
         #endregion
 
+        #region // api/Files/JsonFile  GET
         [HttpGet("[action]")]
         public string JsonFile()
         {
@@ -73,11 +73,10 @@ namespace HelloWorldData.Controllers
                 return data.ToString();
             }
         }
+        #endregion
 
-
-        // api/Files/DeleteFiles
+        #region // api/Files/DeleteFiles  POST
         [HttpPost]
-        #region public IActionResult Post([FromBody]DTONode paramDTONode)
         public IActionResult Post([FromBody]DTONode paramDTONode)
         {
             // Loop through each node
@@ -139,10 +138,10 @@ namespace HelloWorldData.Controllers
         }
         #endregion
 
-        #region public void ProcessDirectory(string targetDirectory, DTONode paramDTONode)
+        #region private void ProcessDirectory(string targetDirectory, ref DTONode paramDTONode)
         // Process all files in the directory passed in, recurse on any directories 
         // that are found, and process the files they contain.
-        public void ProcessDirectory(string targetDirectory, ref DTONode paramDTONode)
+        private void ProcessDirectory(string targetDirectory, ref DTONode paramDTONode)
         {
             // Process the list of files found in the directory.
             string[] fileEntries = Directory.GetFiles(targetDirectory);
@@ -175,9 +174,9 @@ namespace HelloWorldData.Controllers
         }
         #endregion
 
-        #region public void ProcessFile(string path, DTONode paramDTONode)
+        #region private void ProcessFile(string path, ref DTONode paramDTONode)
         // Insert logic for processing found files here.
-        public void ProcessFile(string path, ref DTONode paramDTONode)
+        private void ProcessFile(string path, ref DTONode paramDTONode)
         {
             string WebRootPath = _hostEnvironment.WebRootPath + @"\";
             string FileName = Path.GetFileName(path);
