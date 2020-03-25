@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TreeNode } from 'primeng/api';
 import { NodeService } from '../services/node.service';
 import { MessageService } from 'primeng/api';
+import { Tree } from 'primeng/tree';
+import { Subscription, Observable } from 'rxjs';
+import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
+import { MenuItemContent, MenuModule } from 'primeng/menu';
 
 @Component({
   selector: 'tree-demo',
@@ -9,6 +13,9 @@ import { MessageService } from 'primeng/api';
  })
 export class TreeDemoComponent implements OnInit {
   name: string = "Hello World";
+
+  @ViewChild('expandingTree')
+  expandingTree: Tree;
 
   filesTree0: TreeNode[];
   filesTree1: TreeNode[];
@@ -22,6 +29,8 @@ export class TreeDemoComponent implements OnInit {
   filesTree9: TreeNode[];
   filesTree10: TreeNode[];
   filesTree11: TreeNode[];
+  filesTree12: TreeNode[];
+  filesTree13: TreeNode[];
 
   lazyFiles: TreeNode[];
 
@@ -31,26 +40,32 @@ export class TreeDemoComponent implements OnInit {
   selectedFiles: TreeNode[];
   selectedFiles2: TreeNode[];
 
+  subscription: Subscription[];
+
   items: any[];
   loading: boolean;
 
-  constructor(private nodeService: NodeService, private messageService: MessageService) { }
+  constructor(private nodeSvc: NodeService, private messageService: MessageService) { }
 
   ngOnInit() {
     this.loading = true;
-    this.nodeService.getFiles().then(files => this.filesTree0 = files);
+
+    const nodeService = this.nodeSvc.getFiles().pipe(files => files);
+
+
+    nodeService.subscribe(files => this.filesTree0 = this.deepClone(files));
 
     setTimeout(() => {
-      this.nodeService.getFiles().then(files => this.filesTree1 = files);
+      nodeService.subscribe(files => this.filesTree1 = this.deepClone(files));
       this.loading = false;
     }, 3000);
 
-    this.nodeService.getFiles().then(files => this.filesTree2 = files);
-    this.nodeService.getFiles().then(files => this.filesTree3 = files);
-    this.nodeService.getFiles().then(files => this.filesTree4 = files);
-    this.nodeService.getFiles().then(files => this.filesTree5 = files);
-    this.nodeService.getFiles().then(files => this.filesTree6 = files);
-    this.nodeService.getFiles().then(files => this.filesTree7 = files);
+    nodeService.subscribe(files => this.filesTree2 = this.deepClone(files));
+    nodeService.subscribe(files => this.filesTree3 = this.deepClone(files));
+    nodeService.subscribe(files => this.filesTree4 = this.deepClone(files));
+    nodeService.subscribe(files => this.filesTree5 = this.deepClone(files));
+    nodeService.subscribe(files => this.filesTree6 = this.deepClone(files));
+    nodeService.subscribe(files => this.filesTree7 = this.deepClone(files));
 
     this.filesTree8 = [
       {
@@ -70,9 +85,9 @@ export class TreeDemoComponent implements OnInit {
       }
     ];
 
-    this.nodeService.getFiles().then(files => this.filesTree10 = files);
+    nodeService.subscribe(files => this.filesTree10 = this.deepClone(files));
 
-    this.nodeService.getFiles().then(files => {
+    nodeService.subscribe(files => {
       this.name = JSON.stringify(this.filesTree0);
       this.filesTree11 = [{
         label: 'Root',
@@ -80,7 +95,10 @@ export class TreeDemoComponent implements OnInit {
       }];
     });
 
-    this.nodeService.getFiles().then(files => this.lazyFiles = files);
+    nodeService.subscribe(files => this.filesTree12 = this.deepClone(files));
+    nodeService.subscribe(files => this.filesTree13 = this.deepClone(files));
+
+    nodeService.subscribe(files => this.lazyFiles = this.deepClone(files));
 
     this.items = [
       { label: 'View', icon: 'pi pi-search', command: (event) => this.viewFile(this.selectedFile2) },
@@ -102,8 +120,10 @@ export class TreeDemoComponent implements OnInit {
 
   nodeExpand(event) {
     if (event.node) {
+      const nodeService = this.nodeSvc.getFiles().pipe(files => files);
+
       //in a real application, make a call to a remote url to load children of the current node and add the new nodes as children
-      this.nodeService.getFiles().then(nodes => event.node.children = nodes);
+      nodeService.subscribe(nodes => event.node.children = nodes);
     }
   }
 
@@ -116,13 +136,13 @@ export class TreeDemoComponent implements OnInit {
   }
 
   expandAll() {
-    this.filesTree6.forEach(node => {
+    this.filesTree10.forEach(node => {
       this.expandRecursive(node, true);
     });
   }
 
   collapseAll() {
-    this.filesTree6.forEach(node => {
+    this.filesTree10.forEach(node => {
       this.expandRecursive(node, false);
     });
   }
@@ -135,4 +155,27 @@ export class TreeDemoComponent implements OnInit {
       });
     }
   }
+
+  private deepClone(obj) : TreeNode[] {
+    // return value is input is not an Object or Array.
+    if (typeof (obj) !== 'object' || obj === null) {
+      return obj;
+    }
+
+    let clone;
+
+    if (Array.isArray(obj)) {
+      clone = obj.slice();  // unlink Array reference.
+    } else {
+      clone = Object.assign({}, obj); // Unlink Object reference.
+    }
+
+    let keys = Object.keys(clone);
+
+    for (let i = 0; i < keys.length; i++) {
+      clone[keys[i]] = this.deepClone(clone[keys[i]]); // recursively unlink reference to nested objects.
+    }
+    return clone; // return unlinked clone.
+  }
+
 }

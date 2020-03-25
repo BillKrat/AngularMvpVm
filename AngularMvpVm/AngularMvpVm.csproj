@@ -41,6 +41,7 @@
     <None Remove="ClientApp\src\app\AppConstants.js" />
     <None Remove="ClientApp\src\app\AppConstants.js.map" />
     <None Remove="ClientApp\src\app\AppConstants.ts" />
+    <None Remove="ClientApp\src\app\files\files.component.css" />
     <None Remove="ClientApp\src\app\tree-demo\gallery.component.css" />
     <None Remove="ClientApp\src\app\files\DTODataNode.js" />
     <None Remove="ClientApp\src\app\files\DTODataNode.js.map" />
@@ -54,6 +55,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\AppConstants.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\files\files.component.css" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

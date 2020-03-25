@@ -2,11 +2,13 @@
 
 <h4>Files In Directory</h4>
 <div class="ui-toolbar-group-right">
+
     <button pButton type="button"
             (click)="openCreateFolder()"
             label="Create Folder"
             icon="fa-plus-square"
             class="ui-button-success"></button>
+
     <button pButton type="button"
             (click)="deleteItems()"
             label="Delete"
@@ -15,17 +17,20 @@
 </div>
 
 <!-- Tree Node Control -->
-<p-tree [value]="fileList"></p-tree>
+<p-tree [value]="fileList"
+        selectionMode="multiple"
+        [(selection)]="selectedNodes"
+        (onNodeSelect)="nodeSelect($event)"></p-tree>
 
 <br />
 <h4>Upload Files</h4>
 <br />
 <label for="FileFolder">File Folder </label>
+
 <p-dropdown id="FileFolder"
             [options]="foldersDropdown"
-            [(ngModel)]="selectedFolder"
-            [style]="{'width':'150px'}"></p-dropdown>
-<br /><br />
+            [(ngModel)]="selectedFolder">
+</p-dropdown>
 
 <p-fileUpload name="myfile[]"
               url="api/upload"
@@ -41,7 +46,8 @@
           height="230"
           [responsive]="true"
           [contentStyle]="{'overflow':'visible'}">
-    <p-header>
+
+  <p-header>
         Create New Folder
     </p-header>
     <label for="FileFolderPopup">Parent Folder </label>
@@ -49,7 +55,7 @@
                 [options]="foldersDropdown"
                 [(ngModel)]="selectedFolder"
                 [style]="{'width':'150px'}"></p-dropdown>
-    <br /><br />
+  
     <label for="FolderName">Folder Name </label>
     <input id="FolderName" type="text" pInputText [(ngModel)]="NewFolderName" />
     <p-footer>

@@ -4,6 +4,7 @@ import { FilesService } from '../services/files.service';
 
 @Component({
   selector: 'files',
+  styleUrls: ['./files.component.css'],
   templateUrl: './files.component.html'
 })
 export class FilesComponent implements OnInit {
@@ -20,6 +21,13 @@ export class FilesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFilesAndFolders();
+  }
+  nodeSelect(event) {
+    console.log(`${event.node.label} -- ${event.node.collapsedIcon}`);
+    console.log(event.node);
+    if (event.node.collapsedIcon.includes("folder")) {
+      this.selectedFolder = event.node.label;
+    }
   }
 
   public getFilesAndFolders() {

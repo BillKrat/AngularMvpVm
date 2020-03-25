@@ -1,13 +1,10 @@
+using HelloWorldData.Models;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Hosting;
 using System.IO;
-using HelloWorldData.Models;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Net.Http.Headers;
+using System.Linq;
 
 namespace HelloWorldData.Controllers
 {
@@ -18,9 +15,9 @@ namespace HelloWorldData.Controllers
         // Root Node
         DTONode objDTONode;
 
-        private readonly IHostingEnvironment _hostEnvironment;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public FoldersController(IHostingEnvironment hostEnvironment)
+        public FoldersController(IWebHostEnvironment hostEnvironment)
         {
             _hostEnvironment = hostEnvironment;
 

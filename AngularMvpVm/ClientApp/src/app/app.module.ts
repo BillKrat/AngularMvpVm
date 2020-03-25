@@ -25,9 +25,10 @@ import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
 import { CalendarModule } from 'primeng/calendar';
 import { MessageModule } from 'primeng/message';
-import { MessageService } from 'primeng/api';
+import { MessageService, TreeDragDropService } from 'primeng/api';
 import { TreeDemoComponent } from './tree-demo/tree-demo.component';
-
+import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
+import { MenuItemContent, MenuModule } from 'primeng/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { TreeDemoComponent } from './tree-demo/tree-demo.component';
     FetchDataComponent
   ],
   imports: [
+    ContextMenuModule, MenuModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     BrowserAnimationsModule,
     HttpClientModule,
@@ -64,7 +66,8 @@ import { TreeDemoComponent } from './tree-demo/tree-demo.component';
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },
     FilesService,
     NodeService,
-    MessageService
+    MessageService,
+    TreeDragDropService
   ],
   bootstrap: [AppComponent]
 })

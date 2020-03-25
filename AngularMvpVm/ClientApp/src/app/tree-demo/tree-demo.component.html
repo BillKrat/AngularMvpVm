@@ -69,11 +69,12 @@
   </div>
 
   <h3>Lenient Filter Mode</h3>
-  <p-tree [value]="filesTree11" [filter]="true"></p-tree>
+  <p-tree [value]="filesTree11" [filter]="true" selectionMode="single" [(selection)]="selectedFile2"  [contextMenu]="cm"></p-tree>
 
   <h3>Strict Filter Mode</h3>
   <p-tree [value]="filesTree12" [filter]="true" filterMode="strict"></p-tree>
 
   <h3>Horizontal Tree</h3>
-  <p-tree [value]="filesTree11" layout="horizontal" selectionMode="single" [(selection)]="selectedFile3"></p-tree>
+  <p-tree [value]="filesTree13" layout="horizontal" selectionMode="single" [(selection)]="selectedFile3"></p-tree>
   <div style="margin-top:8px">Selected Node: {{selectedFile3 ? selectedFile3.label : 'none'}}</div>
+  <div style="margin-bottom:500px"></div>
