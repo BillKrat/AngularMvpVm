@@ -72,3 +72,4 @@ import { MenuItemContent, MenuModule } from 'primeng/menu';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
