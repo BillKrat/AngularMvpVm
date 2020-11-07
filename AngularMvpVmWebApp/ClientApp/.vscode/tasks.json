@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "npm start",
+        "type": "npm",
+        "script": "start",
+        "isBackground": true,
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": {
+          "pattern": "$tsc",
+          "background": {
+              "beginsPattern": {
+                  "regexp": "(.*?)"
+              },
+              "endsPattern": {
+                  "regexp": "Compiled |compile."
+              }
+          }
+        }
+      },
+      {
+        "label": "npm test",
+        "type": "npm",
+        "script": "test",
+        "problemMatcher": [],
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        }
+      }
+    ]
+  }

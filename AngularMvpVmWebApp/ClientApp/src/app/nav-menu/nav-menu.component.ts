@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class NavMenuComponent {
   isExpanded = false;
+  title = 'Angular Mvp-Vm Demo';
 
   collapse() {
     this.isExpanded = false;

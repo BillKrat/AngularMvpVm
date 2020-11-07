@@ -1,0 +1,661 @@
+{ 
+	"data": [
+		{
+			"Volume": "1",
+			"Testament": "New Testament",
+			"ShortName": "Matthew",
+			"Language": "Greek",
+			"Description": "Saint Matthew, one of the twelve Apostles, who from being a publican, that is, a taxgatherer, was called by our Saviour to the Apostleship: in that profession his name is Levi.  (Luke 5.27, and Mark 2.14.)  He was the first of the Evangelists that wrote the Gospel, and that in Hebrew or Syro-Chaldaic which the Jews in Palestine spoke at that time.  The original is not now extant; but it was translated in the time of the Apostles into Greek, that version was of equal authority.  He wrote about six years after the Lord's Ascension.",
+			"akaName": "",
+			"Category": "Canonical Gospels"
+		},
+		{
+			"Volume": "2",
+			"Testament": "New Testament",
+			"ShortName": "Mark",
+			"Language": "Greek",
+			"Description": "St. Mark, the disciple and interpreter of St. Peter (saith St. Jerome), according to what he heard from Peter himself, wrote at Rome a brief Gospel at the request of the Brethren, about ten years after our lord's Ascension; which when Peter had heard, he approved of it and with his authority published it to the church to be read.  Baronius and others say that the original was written in Latin:  but the more general opinion is that the Evangelist wrote it in Greek.",
+			"akaName": "",
+			"Category": "Canonical Gospels"
+		},
+		{
+			"Volume": "3",
+			"Testament": "New Testament",
+			"ShortName": "Luke",
+			"Language": "Greek",
+			"Description": "St. Luke was a native of Antioch, the capital of Syria.  He was by profession a physician; and some ancient writers say, that he was very skillful in painting.  He was converted by St. Paul and became his disciple and companion in his travels, and fellow-labourer in the ministry of the Gospel.  He wrote in Greek, about twenty-four years after our Lord's Ascension.",
+			"akaName": "",
+			"Category": "Canonical Gospels"
+		},
+		{
+			"Volume": "4",
+			"Testament": "New Testament",
+			"ShortName": "John",
+			"Language": "Greek",
+			"Description": "St. John the Apostle and Evangelist was the son of Zebedee and Salome, brother to James the Greater.  He was called the Beloved disciple of Christ and stood by at his Crucifixion.  He wrote the Gospel after the other Evangelists, about sixty-three years after our Lord's Ascension. Many things that they had omitted were supplied by him.  The original was written in Greek; and by the Greeks he is titled:  The Divine.  St. Jerome relates that, when he was earnestly requested by the brethren to write the Gospel, he answered he would do it, if by ordering a common fast, they would all put up their prayers together to the Almighty God; which being ended replenished with the clearest and fullest revelation coming from Heaven, he burst forth into that preface:  IN THE BEGINNING WAS THE WORD.",
+			"akaName": "",
+			"Category": "Canonical Gospels"
+		},
+		{
+			"Volume": "5",
+			"Testament": "New Testament",
+			"ShortName": "Acts",
+			"Language": "Greek",
+			"Description": "This Book, which, from the first ages, hath been called, THE ACTS OF THE APOSTLES, is not to be considered as a history of what was done by all the Apostles, who were dispersed into different nations; but only a short view of the first establishment of the Christian Church.  A part of the preaching and action of St. Peter are related in the first twelve chapters; and a particular account of St. Paul's apostolical labours in the subsequent chapters.  It was written by St. Luke the Evangelist, and the original in Greek.  Its history commences from the Ascension of Christ our Lord and ends in the year sixty-three, being a brief account of the Church for the space of about thirty years.",
+			"akaName": "",
+			"Category": "Apostolic History"
+		},
+		{
+			"Volume": "6",
+			"Testament": "New Testament",
+			"ShortName": "Romans",
+			"Language": "Greek",
+			"Description": "St. Paul wrote this epistle at Corinth, when he was preparing to go to Jerusalem with the charitable contributions collected in Achaia and Macedonia for the relief of the Christians in Judea; which was about twenty-four years after Our Lord's Ascension.  It was written in Greek; but at the same time translated into Latin, for the benefit of those who did not understand that language.  And though it is not the first of his Epistles in the order of time, yet it is first placed on account of sublimity of the matter contained in it, of the preeminence of the place to which it was sent, and in veneration of the Church.",
+			"akaName": "",
+			"Category": "Pauline epistles"
+		},
+		{
+			"Volume": "7",
+			"Testament": "New Testament",
+			"ShortName": "1 Corinthians",
+			"Language": "Greek",
+			"Description": "St. Paul, having planted the faithful in Corinth, where he had preached a year and a half and converted a great many, went to Ephesus.  After being there three years, he wrote this first Epistle to the Corinthians and sent it by the same persons, Stephanus, Fortunatus and Achaicus, who had brought their letter to him.  It was written about twenty-four years after our Lord's Ascension and contains several matters appertaining to faith and morals and also to ecclesiastical discipline.",
+			"akaName": "",
+			"Category": "Pauline epistles"
+		},
+		{
+			"Volume": "8",
+			"Testament": "New Testament",
+			"ShortName": "2 Corinthians",
+			"Language": "Greek",
+			"Description": "In this Epistle St. Paul comforts those who are now reformed by his admonitions to them in the former and absolves the incestuous man on doing penance, whom he had before excommunicated for his crime.  Hence he treats of true penance and of the dignity of the ministers of the New Testament.  He cautions the faithful against false teachers and the society of infidels.  He gives an account of his sufferings and also of the favours and graces which God hath bestowed on him.  This second Epistle was written in the same year with the first and sent by Titus from some place in Macedonia.",
+			"akaName": "",
+			"Category": "Pauline epistles"
+		},
+		{
+			"Volume": "9",
+			"Testament": "New Testament",
+			"ShortName": "Galatians",
+			"Language": "Greek",
+			"Description": "The Galatians, soon after St. Paul had preached the Gospel to them, were seduced by some false teachers, who had been Jews and who were for obliging all Christians, even those who had been Gentiles, to observe circumcision and the other ceremonies of the Mosaical law.  In this Epistle, he refutes the pernicious doctrine of those teachers and also their calumny against his mission and apostleship.  The subject matter of this Epistle is much the same as that to the Romans.  It was written at Ephesus, about twenty-three years after our Lord's Ascension.",
+			"akaName": "",
+			"Category": "Pauline epistles"
+		},
+		{
+			"Volume": "10",
+			"Testament": "New Testament",
+			"ShortName": "Ephesians",
+			"Language": "Greek",
+			"Description": "Ephesus was the capital of Lesser Asia, and celebrated for the temple of Diana, to which the most part of the people of the East went frequently to worship.  But St. Paul having preached the Gospel there, for two years the first time and afterwards for about a year, converted many.  He wrote this Epistle to them when he was a prisoner in Rome; and sent it by Tychicus.  He admonishes them to hold firmly the faith which they had received and warns them, and also those of the neighbouring cities, against the sophistry of philosophers and doctrine of false teachers who were come among them.  The matters of faith contained in this Epistle are exceedingly sublime, and consequently very difficult to be understood.  It was written about twenty-nine years after our Lord's Ascension.",
+			"akaName": "",
+			"Category": "Pauline epistles"
+		},
+		{
+			"Volume": "11",
+			"Testament": "New Testament",
+			"ShortName": "Philippians",
+			"Language": "Greek",
+			"Description": "The Philippians were the first among the Macedonians converted to the faith.  They had a great veneration for St. Paul and supplied his wants when he was a prisoner in Rome, sending to him by Epaphroditus, by whom he sent this Epistle; in which he recommends charity, unity and humility and warns them against false teachers, whom he calls dogs and enemies of the cross of Christ.  He also returns thanks for their benefactions.  It was written about twenty-nine years after our Lord's Ascension.",
+			"akaName": "",
+			"Category": "Pauline epistles"
+		},
+		{
+			"Volume": "12",
+			"Testament": "New Testament",
+			"ShortName": "Colossians",
+			"Language": "Greek",
+			"Description": "Colossa was a city of Phrygia, near Laodicea.  It does not appear that St. Paul had preached there himself, but that the Colossians were converted by Epaphras, a disciple of the Apostles.  However, as St. Paul was the great Apostle of the Gentiles, he wrote this Epistle to the Colossians when he was in prison, and about the same time that he wrote to the Ephesians and Philippians.  The exhortations and doctrine it contains are similar to that which is set forth in his Epistle to the Ephesians.",
+			"akaName": "",
+			"Category": "Pauline epistles"
+		},
+		{
+			"Volume": "13",
+			"Testament": "New Testament",
+			"ShortName": "1 Thessalonians",
+			"Language": "Greek",
+			"Description": "Thessalonica was the capital of Macedonia, in which St. Paul, having preached the Gospel, converted some Jews and a great number of the Gentiles:  but the unbelieving Jews, envying his success, raised such a commotion against him that he, and his companion, Sylvanus were obliged to quit the city.  Afterwards he went to Athens, where he heard that the converts in Thessalonica were under a severe persecution, ever since his departure; and lest they should lose their fortitude, he sent Timothy to strengthen and comfort them in their sufferings.  In the meantime St. Paul came to Corinth, where he wrote this first Epistle, and also the second to the Thessalonians, both in the same year, being the nineteenth after our Lord's Ascension.  These are the first of his Epistles in the order of time.",
+			"akaName": "",
+			"Category": "Pauline epistles"
+		},
+		{
+			"Volume": "14",
+			"Testament": "New Testament",
+			"ShortName": "2 Thessalonians",
+			"Language": "Greek",
+			"Description": "In this Epistle St. Paul admonishes the Thessalonians to be constant in the faith of Christ and not to be terrified by the insinuations of false teachers telling them that the day of judgment was near at hand, as there must come many signs and wonders before it.  He bids them to hold firm the traditions received from him, whether by word, or by epistle, and shews them how they may be certain of his letters by the manner he writes.",
+			"akaName": "",
+			"Category": "Pauline epistles"
+		},
+		{
+			"Volume": "15",
+			"Testament": "New Testament",
+			"ShortName": "1 Timothy",
+			"Language": "Greek",
+			"Description": "St. Paul write this Epistle to his BELOVED TIMOTHY, being then bishop of Ephesus, to instruct him in the duties of a bishop, both in respect to himself and to his charge; and that he ought to be well informed of the good morals of those on whom he was to impose hands:  Impose not hands lightly upon any man.  He tells him also how he should behave towards his clergy.  The Epistle was written about 33 years after our Lord's Ascension; but where it was written is uncertain:  the more general opinion is, that it was in Macedonia.",
+			"akaName": "",
+			"Category": "Pauline epistles"
+		},
+		{
+			"Volume": "16",
+			"Testament": "New Testament",
+			"ShortName": "2 Timothy",
+			"Language": "Greek",
+			"Description": "In this Epistle, the Apostle again instructs and admonishes Timothy in what belonged to his office, as in the former; and also warns him to shun the conversation of those who had erred from the truth, describing at the same time their character, He tells him of his approaching death and desires him to come speedily to him.  It appears from this circumstance that he wrote this second Epistle in the time of his last imprisonment at Rome and not long before his martyrdom.",
+			"akaName": "",
+			"Category": "Pauline epistles"
+		},
+		{
+			"Volume": "17",
+			"Testament": "New Testament",
+			"ShortName": "Titus",
+			"Language": "Greek",
+			"Description": "St. Paul, having preached the faith in the island of Crete, he ordained his beloved disciple and companion, Titus, bishop, and left him there to finish the work which he had begun.  Afterwards the Apostle, on a journey to Nicopolis, a city of Macedonia, wrote this Epistle to Titus, in which he directs him to ordain bishops and priests for the different cities, shewing him the principal qualities necessary for a bishop.  He also gives him particular advice for his own conduct to his flock, exhorting him to hold to strictness of discipline, but seasoned with lenity.  It was written about thirty-three years after our Lord's Ascension.",
+			"akaName": "",
+			"Category": "Pauline epistles"
+		},
+		{
+			"Volume": "18",
+			"Testament": "New Testament",
+			"ShortName": "Philemon",
+			"Language": "Greek",
+			"Description": "Philemon, a noble citizen of Colossa, had a servant named Onesimus, who robbed him and fled to Rome, where he met St. Paul, who was then a prisoner there the first time.  The apostle took compassion on him and received him with tenderness and converted him to the faith; for he was a Gentile before.  St. Paul sends him back to his master with this Epistle in his favour:  and though he beseeches Philemon to pardon him, yet the Apostle writes with becoming dignity and authority.  It contains divers profitable instructions and points out the charity and humanity that masters should have for their servants.",
+			"akaName": "",
+			"Category": "Pauline epistles"
+		},
+		{
+			"Volume": "19",
+			"Testament": "New Testament",
+			"ShortName": "Hebrews",
+			"Language": "Greek",
+			"Description": "St. Paul wrote this Epistle to the Christians in Palestine, the most part of whom being Jews before their conversion, they were called Hebrews.  He exhorts them to be thoroughly converted and confirmed in the faith of Christ, clearly shewing them the preeminence of Christ's priesthood above the Levitical, and also the excellence of the new law above the old.  He commends faith by the example of the ancient fathers: and exhorts them to patience and perseverance and to remain in fraternal charity.  It appears from chap. 13 that this Epistle was written in Italy, and probably at Rome, about twenty-nine years after our Lord's Ascension.",
+			"akaName": "",
+			"Category": "General epistles"
+		},
+		{
+			"Volume": "20",
+			"Testament": "New Testament",
+			"ShortName": "James",
+			"Language": "Greek",
+			"Description": "This Epistle is called Catholic or Universal, as formerly were also the two Epistles of St. Peter, the first of St. John and that of St. Jude, because they were not written to any peculiar people or particular person, but to the faithful in general.  It was written by the apostle St. James, called the Less, who was also called the brother of our Lord, being his kinsman (for cousins german with the Hebrews were called brothers).  He was the first Bishop of Jerusalem.  In this Epistle are set forth many precepts appertaining to faith and morals; particularly, that faith without good works will not save a man and that true wisdom is given only from above.  In the fifth chapter he publishes the sacrament of anointing the sick.  It was written a short time before his martyrdom, about twenty-eight years after our Lord's Ascension.",
+			"akaName": "",
+			"Category": "General epistles"
+		},
+		{
+			"Volume": "21",
+			"Testament": "New Testament",
+			"ShortName": "1 Peter",
+			"Language": "Greek",
+			"Description": "The first Epistle of St. Peter, though brief, contains much doctrine concerning Faith, Hope, and Charity, with divers instructions to all persons of what state or condition soever.  The Apostle commands submission to rulers and superiors and exhorts all to the practice of a virtuous life in imitation, of Christ.  This Epistle is written with such apostolical dignity as to manifest the supreme authority with which its writer, the Prince of the Apostles, had been vested by his Lord and Master, Jesus Christ.  He wrote it at Rome, which figuratively he calls Babylon, about fifteen years after our Lord's Ascension.",
+			"akaName": "",
+			"Category": "General epistles"
+		},
+		{
+			"Volume": "22",
+			"Testament": "New Testament",
+			"ShortName": "2 Peter",
+			"Language": "Greek",
+			"Description": "In this Epistle St. Peter says (chap. 3.), Behold this second Epistle I write to you:  and before (chap. 1. 14,) Being assured that the laying away of this my tabernacle is at hand.  This shews, that it was written a very short time before his martyrdom, which was about thirty-five years after our Lord's Ascension.  In this Epistle he admonishes the faithful to be mindful of the great gifts they received from God and to join all other virtues with their faith.  He warns them against false teachers, by describing their practices and foretelling their punishments.  He describes the dissolution of this world by fire and the day of judgment.",
+			"akaName": "",
+			"Category": "General epistles"
+		},
+		{
+			"Volume": "23",
+			"Testament": "New Testament",
+			"ShortName": "1 John",
+			"Language": "Greek",
+			"Description": "The same vein of divine love and charity towards our neighbour, which runs throughout the Gospel written by the beloved disciple and Evangelist, St. John, is found also in his Epistles.  He confirms the two principal mysteries of faith:  The mystery of the Trinity and the mystery of the incarnation of Jesus Christ the Son of God.  The sublimity and excellence of the evangelical doctrine he declares:  And this commandment we have from God, that he, who loveth God, love also his brother (chap. 4,21).  And again:  For this is the charity of God, that we keep his commandments, and:  His commandments are not heavy (chap. 5,3).  He shews how to distinguish the children of God from those of the devil:  marks out those who should be called Antichrists: describes the turpitude and gravity of sin.  Finally, he shews how the sinner may hope for pardon.  It was written, according to Baronius' account, sixty-six years after our Lord's Ascension.",
+			"akaName": "",
+			"Category": "General epistles"
+		},
+		{
+			"Volume": "24",
+			"Testament": "New Testament",
+			"ShortName": "2 John",
+			"Language": "Greek",
+			"Description": "The Apostle commends Electa and her family for their steadfastness in the true faith and exhorts them to persevere, lest they lose the reward of their labours.  He exhorts them to love one another.  But with heretics to have no society, even not to salute them.  Although this Epistle is written to a particular person, yet its instructions may serve as a lesson to others, especially to those who, from their connections, situation, or condition in life, are in danger of perversion.",
+			"akaName": "",
+			"Category": "General epistles"
+		},
+		{
+			"Volume": "25",
+			"Testament": "New Testament",
+			"ShortName": "3 John",
+			"Language": "Greek",
+			"Description": "St. John praises Gaius for his walking in truth and for his charity, complains of the bad conduct of Diotrephes and gives a good testimony to Demetrius.",
+			"akaName": "",
+			"Category": "General epistles"
+		},
+		{
+			"Volume": "26",
+			"Testament": "New Testament",
+			"ShortName": "Jude",
+			"Language": "Greek",
+			"Description": "St. Jude, who wrote this Epistle, was one of the twelve Apostles and brother to St. James the Less.  The time it was written is uncertain: only it may be inferred from verse 17 that few or none of the Apostles were then living, except St. John.  He inveighs against the heresies and wicked practices of the Simonians, Nicolaites, and Gnostics, etc., describing them and their leaders by strong epithets and similes, He exhorts the faithful to contend earnestly for the faith first delivered to them and to beware of heretics.",
+			"akaName": "",
+			"Category": "General epistles"
+		},
+		{
+			"Volume": "27",
+			"Testament": "New Testament",
+			"ShortName": "Revelation",
+			"Language": "Greek",
+			"Description": "In the first, second, and third chapters of this Book are contained instructions and admonitions which St. John was commanded to write to the seven bishops of the churches in Asia.  And in the following chapters, to the end, are contained prophecies of things that are to come to pass in the Church of Christ, particularly towards the end of the world, in the time of Antichrist.  It was written in Greek, in the island of Patmos, where St. John was in banishment by order of the cruel emperor Domitian, about sixty-four years after our Lord's Ascension.",
+			"akaName": "",
+			"Category": "Apocalypse"
+		},
+		{
+			"Volume": "1",
+			"Testament": "Old Testament",
+			"ShortName": "Genesis",
+			"Language": "Hebrew",
+			"Description": "This book is so called from its treating of the GENERATION, that is, of the creation and the beginning of the world.  The Hebrews call it BERESITH, from the Word with which it begins.  It contains not only the history of the Creation of the world; but also an account of its progress during the space of 2369 years, that is, until the death of JOSEPH.",
+			"akaName": "",
+			"Category": "Pentateuch or the Five Books of Moses"
+		},
+		{
+			"Volume": "2",
+			"Testament": "Old Testament",
+			"ShortName": "Exodus",
+			"Language": "Hebrew",
+			"Description": "The Second Book of Moses is called EXODUS, from the Greek word EXODOS, which signifies going out:  because it contains the history of the going out of the children of Israel out of Egypt.  The Hebrews, from the words with which it begins, call it VEELLE SEMOTH:  These are the names.  It contains transactions for 145 years; that is, from the death of Joseph to the erecting of the tabernacle.",
+			"akaName": "",
+			"Category": "Pentateuch or the Five Books of Moses"
+		},
+		{
+			"Volume": "3",
+			"Testament": "Old Testament",
+			"ShortName": "Leviticus",
+			"Language": "Hebrew",
+			"Description": "This Book is called LEVITICUS, because it treats of the Offices, Ministries, Rites and Ceremonies of the Priests and Levites.  The Hebrews call it VAICRA, from the word with which it begins.",
+			"akaName": "",
+			"Category": "Pentateuch or the Five Books of Moses"
+		},
+		{
+			"Volume": "4",
+			"Testament": "Old Testament",
+			"ShortName": "Numbers",
+			"Language": "Hebrew",
+			"Description": "This fourth Book of Moses is called NUMBERS, because it begins with the numbering of the people.  The Hebrews, from its first words, call it VAIEDABBER.  It contains the transactions of the Israelites from the second month of the second year after their going out of Egypt, until the beginning of the eleventh month of the fortieth year; that is, a history almost of thirty-nine years.",
+			"akaName": "",
+			"Category": "Pentateuch or the Five Books of Moses"
+		},
+		{
+			"Volume": "5",
+			"Testament": "Old Testament",
+			"ShortName": "Deuteronomy",
+			"Language": "Hebrew",
+			"Description": "This Book is called DEUTERONOMY, which signifies a SECOND LAW, because it repeats and inculcates the ordinances formerly given on mount Sinai, with other precepts not expressed before.  The Hebrews, from the first words in the book, call it ELLE HADDEBARIM.",
+			"akaName": "",
+			"Category": "Pentateuch or the Five Books of Moses"
+		},
+		{
+			"Volume": "6",
+			"Testament": "Old Testament",
+			"ShortName": "Joshua",
+			"Language": "Hebrew",
+			"Description": "This Book is called JOSUE, because it contains the history of what passed under him, and according to the common opinion was written by him.  The Greeks call him Jesus:  for Josue and Jesus in the Hebrew, are the same name, and have the same signification, viz., A SAVIOUR.  And it was not without a mystery that he who was to bring the people into the land of promise should have his name changed from OSEE (for so he was called before, Num. 13.17,) to JOSUE or JESUS, to give us to understand, that Moses by his law could only bring the people within sight of the promised inheritance, but that our Saviour JESUS was to bring us into it.",
+			"akaName": "Josue",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "7",
+			"Testament": "Old Testament",
+			"ShortName": "Judges",
+			"Language": "Hebrew",
+			"Description": "This Book is called JUDGES, because it contains the history of what passed under the government of the judges, who ruled Israel before they had kings.  The writer of it, according to the more general opinion, was the prophet Samuel.",
+			"akaName": "",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "8",
+			"Testament": "Old Testament",
+			"ShortName": "Ruth",
+			"Language": "Hebrew",
+			"Description": "This Book is called RUTH, from the name of the person whose history is here recorded:  who, being a Gentile, became a convert to the true faith, and marrying Booz, the great-grandfather of David, was one of those from whom Christ sprung according to the flesh, and an illustrious figure of the Gentile church.  It is thought this book was written by the prophet Samuel.",
+			"akaName": "",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "9",
+			"Testament": "Old Testament",
+			"ShortName": "1 Samuel",
+			"Language": "Hebrew",
+			"Description": "This and the following Book are called by the Hebrews the books of Samuel, because they contain the history of Samuel, and of the two kings, Saul and David, whom he anointed.  They are more commonly named by the Fathers, the first and second book of kings.  As to the writer of them, it is the common opinion that Samuel composed the first book, as far as the twenty-fifth chapter; and that the prophets Nathan and Gad finished the first, and wrote the second book.  See 1 Paralipomenon, alias 1 Chronicles, 29.29.",
+			"akaName": "1 Kings",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "10",
+			"Testament": "Old Testament",
+			"ShortName": "2 Samuel",
+			"Language": "Hebrew",
+			"Description": "This Book relates the transactions from the death of Saul until the end of David's reign, being a history for the space of about forty-six years.",
+			"akaName": "2 Kings",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "11",
+			"Testament": "Old Testament",
+			"ShortName": "1 Kings",
+			"Language": "Hebrew",
+			"Description": "This and the following Book are called by the holy fathers the third and fourth book of Kings; but by the Hebrews, the first and second. They contain the history of the kingdoms of Israel and Juda, from the beginning of the reign of Solomon, to the captivity.  As to the writer of these books, it seems most probable they were not written by one man; nor at one time; but as there was all along a succession of prophets in Israel, who recorded, by divine inspiration, the most remarkable things that happened in their days, these books seem to have been written by these prophets.  See 2 Paralip. alias 2 Chron. 9.29; 12.15; 13.22; 20.34; 26.22; 32.32.",
+			"akaName": "3 Kings",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "12",
+			"Testament": "Old Testament",
+			"ShortName": "2 Kings",
+			"Language": "Hebrew",
+			"Description": "",
+			"akaName": "4 Kings",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "13",
+			"Testament": "Old Testament",
+			"ShortName": "1 Chronicles",
+			"Language": "Hebrew",
+			"Description": "These Books are called by the Greek interpreters, Paralipomenon, that is, of things left out, or omitted; because they are a kind of a supplement of such things as were passed over in the books of the Kings.  The Hebrews call them Dibre Haijamim, that is, The words of the days, or The Chronicles.--Not that they are the books which are so often quoted in the Kings, under the title of the words of the days of the kings of Israel, and of the kings of Juda:  for the books of Paralipomenon were written after the books of Kings:  but because in all probability they have been abridged from those ancient words of the days, by Esdras or some other sacred writer.",
+			"akaName": "1 Paralipomenon",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "14",
+			"Testament": "Old Testament",
+			"ShortName": "2 Chronicles",
+			"Language": "Hebrew",
+			"Description": "",
+			"akaName": "2 Paralipomenon",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "15",
+			"Testament": "Old Testament",
+			"ShortName": "Ezra",
+			"Language": "Hebrew and Aramaic",
+			"Description": "This Book taketh its name from the writer:  who was a holy priest, and doctor of the law.  He is called by the Hebrews, Ezra.",
+			"akaName": "1 Esdras",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "16",
+			"Testament": "Old Testament",
+			"ShortName": "Nehemiah",
+			"Language": "Hebrew",
+			"Description": "This Book takes its name from the writer, who was cupbearer to Artaxerxes (surnamed Longimanus) king of Persia, and was sent by him with a commission to rebuild the walls of Jerusalem.  It is also called the second book of Esdras; because it is a continuation of the history, begun by Esdras, of the state of the people of God after their return from captivity.",
+			"akaName": "2 Esdras",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "17",
+			"Testament": "Old Testament",
+			"ShortName": "Tobit",
+			"Language": "Aramaic (and Hebrew?)",
+			"Description": "This Book takes its name from the holy man Tobias, whose wonderful virtues are herein recorded.  It contains most excellent documents of great piety, extraordinary patience, and of a perfect resignation to the will of God.  His humble prayer was heard, and the angel Raphael was sent to relieve him:  he is thankful and praises the Lord, calling on the children of Israel to do the same.  Having lived to the age of one hundred and two years, he exhorts his son and grandsons to piety, foretells the destruction of Ninive and the rebuilding of Jerusalem:  he dies happily.",
+			"akaName": "Tobias",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "18",
+			"Testament": "Old Testament",
+			"ShortName": "Judith",
+			"Language": "Hebrew",
+			"Description": "The sacred writer of this Book is generally believed to be the high priest Eliachim (called also Joachim).  The transactions herein related, most probably happened in his days, and in the reign of Manasses, after his repentance and return from captivity.  It takes its name from that illustrious woman, by whose virtue and fortitude, and armed with prayer, the children of Israel were preserved from the destruction threatened them by Holofernes and his great army.  It finishes with her canticle of thanksgiving to God.",
+			"akaName": "",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "19",
+			"Testament": "Old Testament",
+			"ShortName": "Esther",
+			"Language": "Hebrew",
+			"Description": "This Book takes its name from queen Esther, whose history is here recorded.  The general opinion of almost all commentators on the Holy Scriptures makes Mardochai the writer of it:  which also may be collected below from chap. 9 ver. 20.",
+			"akaName": "",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "20",
+			"Testament": "Old Testament",
+			"ShortName": "Job",
+			"Language": "Hebrew",
+			"Description": "This Book takes its name from the holy man of whom it treats:  who, according to the more probable opinion, was of the race of Esau; and the same as Jobab, king of Edom, mentioned Gen. 36.33.  It is uncertain who was the writer of it.  Some attribute it to Job himself; others to Moses, or some one of the prophets.  In the Hebrew it is written in verse, from the beginning of the third chapter to the forty-second chapter.",
+			"akaName": "",
+			"Category": "Wisdom books"
+		},
+		{
+			"Volume": "21",
+			"Testament": "Old Testament",
+			"ShortName": "Psalms",
+			"Language": "Hebrew",
+			"Description": "The psalms are called by the Hebrews TEHILLIM, that is, Hymns of Praise.  The author, of a great part of them at least, was king David: but many are of opinion that some of them were made by Asaph, and others whose names are prefixed in the titles.",
+			"akaName": "",
+			"Category": "Wisdom books"
+		},
+		{
+			"Volume": "22",
+			"Testament": "Old Testament",
+			"ShortName": "Proverbs",
+			"Language": "Hebrew",
+			"Description": "This Book is so called, because it consists of wise and weighty sentences:  regulating the morals of men:  and directing them to wisdom and virtue.  And these sentences are also called PARABLES, because great truths are often couched in them under certain figures and similitudes.",
+			"akaName": "",
+			"Category": "Wisdom books"
+		},
+		{
+			"Volume": "23",
+			"Testament": "Old Testament",
+			"ShortName": "Ecclesiastes",
+			"Language": "Hebrew",
+			"Description": "This Book is called Ecclesiastes, or The Preacher, (in Hebrew, Coheleth,) because in it, Solomon, as an excellent preacher, setteth forth the vanity of the things of this world:  to withdraw the hearts and affections of men from such empty toys.",
+			"akaName": "",
+			"Category": "Wisdom books"
+		},
+		{
+			"Volume": "24",
+			"Testament": "Old Testament",
+			"ShortName": "Song of Songs",
+			"Language": "Hebrew",
+			"Description": "This Book is called the Canticle of Canticles, that is to say, the most excellent of all canticles:  because it is full of high mysteries, relating to the happy union of Christ and his spouse:  which is here begun by love; and is to be eternal in heaven.  The spouse of Christ is the church:  more especially as to the happiest part of it, viz., perfect souls, every one of which is his beloved, but, above all others, the immaculate and ever blessed virgin mother.",
+			"akaName": "Canticle of Canticles",
+			"Category": "Wisdom books"
+		},
+		{
+			"Volume": "25",
+			"Testament": "Old Testament",
+			"ShortName": "Wisdom",
+			"Language": "Greek",
+			"Description": "This Book is so called, because it treats of the excellence of WISDOM, the means to obtain it, and the happy fruits it produces.  It is written in the person of Solomon, and contains his sentiments.  But it is uncertain who was the writer.  It abounds with instructions and exhortations to kings and all magistrates to minister justice in the commonwealth, teaching all kinds of virtues under the general names of justice and wisdom.  It contains also many prophecies of Christ's coming, passion, resurrection, and other Christian mysteries.  The whole may be divided into three parts.  In the first six chapters, the author admonishes all superiors to love and exercise justice and wisdom.  In the next three, he teacheth that wisdom proceedeth only from God, and is procured by prayer and a good life.  In the other ten chapters, he sheweth the excellent effects and utility of wisdom and justice.",
+			"akaName": "",
+			"Category": "Wisdom books"
+		},
+		{
+			"Volume": "26",
+			"Testament": "Old Testament",
+			"ShortName": "Sirach",
+			"Language": "Hebrew",
+			"Description": "This Book is so called from a Greek word that signifies a preacher: because, like an excellent preacher, it gives admirable lessons of all virtues.  The author was Jesus the son of Sirach of Jerusalem, who flourished about two hundred years before Christ.  As it was written after the time of Esdras, it is not in the Jewish canon; but is received as canonical and divine by the Catholic Church, instructed by apostolical tradition, and directed by the spirit of God.  It was first written in the Hebrew, but afterwards translated into Greek, by another Jesus, the grandson of the author, whose prologue to this book is the following:",
+			"akaName": "Ecclesiasticus",
+			"Category": "Wisdom books"
+		},
+		{
+			"Volume": "27",
+			"Testament": "Old Testament",
+			"ShortName": "Isaiah",
+			"Language": "Hebrew",
+			"Description": "This inspired writer is called by the Holy Ghost, the great prophet, (Ecclesiasticus 48.25,) from the greatness of his prophetic spirit, by which he hath foretold so long before, and in so clear a manner, the coming of Christ, the mysteries of our redemption, the calling of the Gentiles, and the glorious establishment, and perpetual flourishing of the church of Christ:  insomuch that he may seem to have been rather an evangelist than a prophet.  His very name is not without mystery; for Isaias in Hebrew signifies the salvation of the Lord, or Jesus is the Lord.  He was, according to the tradition of the Hebrews, of the blood royal of the kings of Juda:  and after a most holy life, ended his days by a glorious martyrdom; being sawed in two, at the command of his wicked son in law, King Manasses, for reproving his evil ways.",
+			"akaName": "Isaias",
+			"Category": "Major prophets"
+		},
+		{
+			"Volume": "28",
+			"Testament": "Old Testament",
+			"ShortName": "Jeremiah",
+			"Language": "Hebrew and Aramaic",
+			"Description": "Jeremias was a priest, a native of Anathoth, a priestly city in the tribe of Benjamin:  and was sanctified from his mother's womb, to be a prophet of God; which office he began to execute when he was yet a child in age.  He was in his whole life, according to the signification of his name, Great before the Lord; and a special figure of Jesus Christ, in the persecutions he underwent for discharging his duty; in his charity for his persecutors; and in the violent death he suffered at their hands:  it being an ancient tradition of the Hebrews, that he was stoned to death by the remnant of the Jews who had retired into Egypt.",
+			"akaName": "Jeremias",
+			"Category": "Major prophets"
+		},
+		{
+			"Volume": "29",
+			"Testament": "Old Testament",
+			"ShortName": "Lamentations",
+			"Language": "Hebrew",
+			"Description": "In these JEREMIAS laments in a most pathetical manner the miseries of his people, and the destruction of JERUSALEM and the temple, in Hebrew verses, beginning with different letters according to the order of the Hebrew alphabet.",
+			"akaName": "",
+			"Category": "Major prophets"
+		},
+		{
+			"Volume": "30",
+			"Testament": "Old Testament",
+			"ShortName": "Baruch with Letter of Jeremiah as the 6th Chapter",
+			"Language": "Greek (majority view)[26]",
+			"Description": "BARUCH was a man of noble extraction, and learned in the law, secretary and disciple to the prophet JEREMIAS, and a sharer in his labours and persecutions:  which is the reason why the ancient fathers have considered this book as a part of the prophecy of JEREMIAS, and have usually quoted it under his name.",
+			"akaName": "",
+			"Category": "Major prophets"
+		},
+		{
+			"Volume": "31",
+			"Testament": "Old Testament",
+			"ShortName": "Ezekiel",
+			"Language": "Hebrew",
+			"Description": "EZECHIEL, whose name signifies the STRENGTH OF GOD, was of the priestly race; and of the number of captives that were carried away to Babylon with king JOACHIN.  He was contemporary with JEREMIAS, and prophesied to the same effect in Babylon, as JEREMIAS did in Jerusalem; and is said to have ended his days in like manner, by martyrdom.",
+			"akaName": "Ezechiel",
+			"Category": "Major prophets"
+		},
+		{
+			"Volume": "32",
+			"Testament": "Old Testament",
+			"ShortName": "Daniel",
+			"Language": "Hebrew and Aramaic",
+			"Description": "DANIEL, whose name signifies THE JUDGMENT OF GOD, was of the royal blood of the kings of Juda:  and one of those that were first of all carried away into captivity.  He was so renowned for wisdom and knowledge, that it became a proverb among the Babylonians, AS WISE AS DANIEL (Ezech. 28.3).  And his holiness was so great from his very childhood, that at the time when he was as yet but a young man, he is joined by the SPIRIT of GOD with NOE and JOB, as three persons most eminent for virtue and sanctity, Ezech. 14.  He is not commonly numbered by the Hebrews among THE PROPHETS:  because he lived at court, and in high station in the world:  but if we consider his many clear predictions of things to come, we shall find that no one better deserves the name and title of A PROPHET:  which also has been given him by the SON of GOD himself, Matt. 24, Mark 13., Luke 21.",
+			"akaName": "",
+			"Category": "Major prophets"
+		},
+		{
+			"Volume": "33",
+			"Testament": "Old Testament",
+			"ShortName": "Hosea",
+			"Language": "Hebrew",
+			"Description": "OSEE, or Hosea, whose name signifies A saviour, was the first in the order of time among those who are commonly called lesser prophets, because their prophecies are short.  He prophesied in the kingdom of Israel, that is, of the ten tribes, about the same time that Isaias prophesied in the kingdom of Juda.",
+			"akaName": "Osee",
+			"Category": "Twelve Minor Prophets"
+		},
+		{
+			"Volume": "34",
+			"Testament": "Old Testament",
+			"ShortName": "Joel",
+			"Language": "Hebrew",
+			"Description": "JOEL, whose name, according to ST. JEROME, signifies THE LORD GOD:  or, as others say, THE COMING DOWN OF GOD:  prophesied about the same time in the kingdom of Judea, as OSEE did in the kingdom of Israel.  He foretells under figure the great evils that were coming upon the people for their sins:  earnestly exhorts them to repentance:  and comforts them with the promise of a TEACHER OF JUSTICE, viz., CHRIST JESUS OUR LORD, and of the coming down of his holy SPIRIT.",
+			"akaName": "",
+			"Category": "Twelve Minor Prophets"
+		},
+		{
+			"Volume": "35",
+			"Testament": "Old Testament",
+			"ShortName": "Amos",
+			"Language": "Hebrew",
+			"Description": "AMOS prophesied in Israel about the same time as OSEE:  and was called from following the cattle to denounce GOD'S judgments to the people of Israel, and the neighbouring nations, for their repeated crimes, in which they continued without repentance.",
+			"akaName": "",
+			"Category": "Twelve Minor Prophets"
+		},
+		{
+			"Volume": "36",
+			"Testament": "Old Testament",
+			"ShortName": "Obadiah",
+			"Language": "Hebrew",
+			"Description": "ABDIAS, whose name is interpreted THE SERVANT OF THE LORD, is believed to have prophesied about the same time as OSEE, JOEL, and AMOS:  though some of the Hebrews, who believe him to be the same with ACHAB's steward, make him much more ancient.  His prophecy is the shortest of any in number of words, but yields to none, says ST. JEROME, in the sublimity of mysteries.  It contains but one chapter.",
+			"akaName": "Abdias",
+			"Category": "Twelve Minor Prophets"
+		},
+		{
+			"Volume": "37",
+			"Testament": "Old Testament",
+			"ShortName": "Jonah",
+			"Language": "Hebrew",
+			"Description": "JONAS prophesied in the reign of JEREBOAM the second:  as we learn from 4 Kings 14.25. To whom also he foretold his success in restoring all the borders of Israel.  He was of GETH OPHER in the tribe of ZABULON, and consequently of GALILEE:  which confutes that assertion of the Pharisees, John 7.52, that no prophet ever rose out of GALILEE.  He prophesied and prefigured in his own person the death and resurrection of CHRIST:  and was the only one among the prophets that was sent to preach to the Gentiles.",
+			"akaName": "Jonas",
+			"Category": "Twelve Minor Prophets"
+		},
+		{
+			"Volume": "38",
+			"Testament": "Old Testament",
+			"ShortName": "Micah",
+			"Language": "Hebrew",
+			"Description": "MICHEAS, of Morasti, a little town in the tribe of JUDA, was contemporary with the prophet ISAIAS:  whom he resembles both in his spirit and his style.  He is different from the prophet MICHEAS mentioned in the third book of Kings, chap. 22.  For that MICHEAS lived in the days of king ACHAB, one hundred and fifty years before the time of EZECHIAS, under whom this MICHEAS prophesied.",
+			"akaName": "Micheas",
+			"Category": "Twelve Minor Prophets"
+		},
+		{
+			"Volume": "39",
+			"Testament": "Old Testament",
+			"ShortName": "Nahum",
+			"Language": "Hebrew",
+			"Description": "NAHUM, whose name signifies A COMFORTER, was a native of Elcese, or Elcesai, supposed to be a little town in Galilee.  He prophesied, after the ten tribes were carried into captivity, and foretold the utter destruction of Ninive, by the Babylonians and Medes:  which happened in the reign of JOSIAS.",
+			"akaName": "",
+			"Category": "Twelve Minor Prophets"
+		},
+		{
+			"Volume": "40",
+			"Testament": "Old Testament",
+			"ShortName": "Habakkuk",
+			"Language": "Hebrew",
+			"Description": "HABACUC was a native of Bezocher, and prophesied in JUDA, some time before the invasion of the CHALDEANS, which he foretold.  He lived to see this prophecy fulfilled, and for many years after, according to the general opinion, which supposes him to be the same that was brought by the ANGEL to DANIEL in BABYLON, Dan. 14.",
+			"akaName": "Habacuc",
+			"Category": "Twelve Minor Prophets"
+		},
+		{
+			"Volume": "41",
+			"Testament": "Old Testament",
+			"ShortName": "Zephaniah",
+			"Language": "Hebrew",
+			"Description": "SOPHONIAS, whose name, saith St. Jerome, signifies The Watchman of the Lord, or The hidden of the Lord, prophesied in the beginning of the reign of Josias.  He was a native of Sarabatha, and of the tribe of Simeon, according to the more general opinion.  He prophesied the punishments of the Jews, for their idolatry and other crimes; also the punishments that were to come on divers nations; the coming of Christ, the conversion of the Gentiles, the blindness of the Jews, and their conversion towards the end of the world.",
+			"akaName": "Sophonias",
+			"Category": "Twelve Minor Prophets"
+		},
+		{
+			"Volume": "42",
+			"Testament": "Old Testament",
+			"ShortName": "Haggai",
+			"Language": "Hebrew",
+			"Description": "AGGEUS was one of those that returned from the captivity of Babylon, in the first year of the reign of king Cyrus.  He was sent by the Lord, in the second year of the reign of king Darius, the son of Hystaspes, to exhort Zorobabel the prince of Juda, and Jesus the high priest, to the building of the temple; which they had begun, but left off again through the opposition of the Samaritans.  In consequence of this exhortation they proceeded in the building and finished the temple.  And the prophet was commissioned by the Lord to assure them that this second temple should be more glorious than the former, because the Messiah should honour it with his presence:  signifying withal how much the church of the New Testament should excel that of the Old Testament.",
+			"akaName": "Aggeus",
+			"Category": "Twelve Minor Prophets"
+		},
+		{
+			"Volume": "43",
+			"Testament": "Old Testament",
+			"ShortName": "Zechariah",
+			"Language": "Hebrew",
+			"Description": "ZACHARIAS began to prophesy in the same year as Aggeus, and upon the same occasion.  His prophecy is full of mysterious figures and promises of blessings, partly relating to the synagogue, and partly to the church of Christ.",
+			"akaName": "Zacharias",
+			"Category": "Twelve Minor Prophets"
+		},
+		{
+			"Volume": "44",
+			"Testament": "Old Testament",
+			"ShortName": "Malachi",
+			"Language": "Hebrew",
+			"Description": "MALACHIAS, whose name signifies The Angel of the Lord, was contemporary with NEHEMIAS, and by some is believed to have been the same person as ESDRAS.  He was the last of the prophets, in the order of time, and flourished about four hundred years before Christ.  He foretells the coming of Christ; the reprobation of the Jews and their sacrifices; and the calling of the Gentiles, who shall offer up to God in every place an acceptable sacrifice.",
+			"akaName": "Malachias",
+			"Category": "Twelve Minor Prophets"
+		},
+		{
+			"Volume": "45",
+			"Testament": "Old Testament",
+			"ShortName": "1 Maccabees",
+			"Language": "Hebrew",
+			"Description": "These books are so called, because they contain the history of the people of God under the command of Judas Machabeus and his brethren: and he, as some will have it, was surnamed Machabeus, from carrying in his ensigns, or standards, those words of Exodus 15.11, Who is like to thee among the strong, O Lord:  in which the initial letters, in the Hebrew, are M. C. B. E. I.  It is not known who is the author of these books.  But as to their authority, though they are not received by the Jews, saith St. Augustine, (lib. 18, De Civ. Dei, c. 36,) they are received by the church:  who, in settling her canon of the scriptures, chose rather to be directed by the tradition she had received from the apostles of Christ, than by that of the scribes and Pharisees.  And as the church has declared these two Books canonical, even in two general councils, viz., Florence and Trent, there can be no doubt of their authenticity.",
+			"akaName": "1 Machabees",
+			"Category": "Historical books"
+		},
+		{
+			"Volume": "46",
+			"Testament": "Old Testament",
+			"ShortName": "2 Maccabees",
+			"Language": "Greek",
+			"Description": "This second book of MACHABEES is not a continuation of the history contained in the first:  nor does is come down so low as the first does: but relates many of the same facts more at large, and adds other remarkable particulars, omitted in the first book, relating to the state of the Jews, as well before as under the persecution of ANTIOCHUS.  The author, who is not the same with that of the first book, has given (as we learn from chap. 2.20, etc.) a short abstract of what JASON of Cyrene had written in the five volumes, concerning JUDAS and his brethren.  He wrote in Greek, and begins with two letters, sent by the Jews of Jerusalem to their brethren in Egypt.",
+			"akaName": "2 Machabees",
+			"Category": "Historical books"
+		}
+	]
+}
