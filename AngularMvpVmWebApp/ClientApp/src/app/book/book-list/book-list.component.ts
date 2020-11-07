@@ -11,9 +11,12 @@ import { BookDataService } from '../book-data.service';
 export class BookListComponent implements OnInit {
   books: Book[];
 
-  constructor(private bookDataService: BookDataService) { }
+  constructor(
+    private bookDataService: BookDataService, 
+  ) { }
 
   ngOnInit() {
+    
     this.bookDataService
       .getBookData()
       .then( books => {
