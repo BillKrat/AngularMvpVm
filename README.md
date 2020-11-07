@@ -12,7 +12,7 @@ at [this Sparx Systems link](https://www.sparxsystems.com/bin/EALite.msi)
 ## What is MVP-VM?
  * [MVPVM Design Pattern for WPF](https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/december/mvpvm-design-pattern-the-model-view-presenter-viewmodel-design-pattern-for-wpf)  
 
- Lnks from above article (X indicates link in above article is broken):
+ Lnks from above article are working below (X indicates link in above article is broken):
  * X [Sample WPF App](http://www.adventuresontheedge.net/files/MvpVmR2.zip)  (MvpVmR2.zip)
  * X [GUI Architectures](https://www.martinfowler.com/eaaDev/uiArchs.html) - Martin Fowler
  * X [Twisting the Triad](http://www.object-arts.com/downloads/papers/TwistingTheTriad.PDF) - Andy Bower / Blair McGlashan
@@ -23,9 +23,6 @@ at [this Sparx Systems link](https://www.sparxsystems.com/bin/EALite.msi)
  * √ [An Introduction to GUI Programming with UIL and Motif](https://www.cs.nmsu.edu/~rth/cs/cs177/s98/IntroUIL2.html)
  * X [PresentationModel and WPF](https://docs.microsoft.com/en-us/archive/blogs/johngossman/presentationmodel-and-wpf) - John Gossman
 
-
-
- 
 
 The Model-View-Presenter (MVP) pattern was created to solve issues with the Model-View-Controller (MVC) pattern.   Where the above article was for WPF, the pattern applies to any framework that 
 has a view and view model (the view observes the view model for changes and displays them).
@@ -55,14 +52,19 @@ Martin Fowler, one of our great architects, wrote in his article on [GUI Archite
 The MVP-VM pattern is the MVP pattern.  It is the Presenter that communicates with the services and uses the data to populate the ViewModel.   This permits the ViewModel to remain decoupled and generic (easy to reuse).   Likewise Views can be reused with other ViewModels as long as the meet the minimum contract, i.e., the ViewModel holds the properties expected by the View.
 
 ## What is ANGULAR MVP-VM?
+
+Note: "no knowledge" below denotes that the component is not strongly typed (no reference); it is loosely coupled and can be easily swapped out with a different component.
+
 A POC solution that will apply the principles of MVP-VM.
  * Cross cutting concerns such as communication [between components] will be handled with event aggregation
- * ViewModels will have no knowledge of other (loosely coupled)
+ * ViewModels will have no knowledge of other (loosely coupled) 
  * Views have no knowlege of their ViewModel
  * ViewModels have no knowledge of their View or Services.
  * The Presenter is the only component that communicates with the BLL
  * The BLL is the only layer that communicates with Services
  * Services is the only layer that communicates with the Data Model
+
+ 
 
 This separation permits reuse and has a strong dependency on Event Aggregation and Inversion Of Control (IOC), aka Dependency Injection (DI)
 
