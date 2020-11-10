@@ -1,0 +1,31 @@
+<h1>Hello, world!</h1>
+<p>Select data access layer to use below:</p>
+<!-- Form starts -->
+<form #myForm="ngForm" (submit)="setService()" novalidate>
+
+  <div class="custom-control custom-radio">
+     <input id="Cloud" 
+            type="radio" class="custom-control-input" 
+            value="Cloud" 
+            name="service"
+            [checked]="selectedService==='Cloud'"
+            [(ngModel)]="selectedService">
+
+     <label class="custom-control-label" for="Cloud">Cloud</label>
+  </div>
+
+  <div class="custom-control custom-radio">
+     <input id="Device" 
+            type="radio" class="custom-control-input" 
+            value="Device" 
+            name="service" 
+            [checked]="selectedService==='Device'"
+            [(ngModel)]="selectedService">
+
+     <label class="custom-control-label" for="Device">Device</label>
+  </div>
+
+  <button type="submit" 
+          style="width: 100px;"
+          class="btn btn-danger btn-lg btn-block">Update</button>
+</form><!-- Form ends -->
